@@ -1,11 +1,10 @@
 import react from 'react';
-import './login-button.styles.scss';
 import {Link} from 'react-router-dom';
+import './login-button.styles.scss';
 
-const Loginbutton =()=>(
-    <div className="btn-contaner">
-    
-    <link to="/" className="btn-container"></link>
+const Loginbutton =({message})=>(
+    <div className="btn-container">
+        <Link className="btn-style" href='/'>{message}</Link>
     </div>
 )
 

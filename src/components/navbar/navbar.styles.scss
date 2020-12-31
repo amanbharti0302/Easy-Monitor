@@ -1,8 +1,11 @@
 .nav{
     &-container{
-        margin: auto;
+        margin: 0.5rem auto;
         height: 100px;
         box-shadow: 1rem;
-        border-bottom: solid grey;  
+        border-bottom: 0.02rem solid grey;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
     }
 }

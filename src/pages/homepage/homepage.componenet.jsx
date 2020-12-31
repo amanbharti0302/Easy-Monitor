@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import './homepage.styles.scss';
-import {Switch,Route,Redirect} from 'react-router-dom';
+
 
 class Homepage extends Component{
     constructor(){
@@ -11,7 +11,7 @@ class Homepage extends Component{
 
     render(){
         return(
-            <div className="">
+            <div className="home-container">
                 Hello
             </div>
         )

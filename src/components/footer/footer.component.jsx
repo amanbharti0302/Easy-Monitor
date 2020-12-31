@@ -11,7 +11,8 @@ class Footer extends Component{
     render(){
         return(
             <div className="footer">
-                footer
+                <div className="footer-border"></div>
+                
                 <br/>
                 <span>&#xa9; Copyright 2020</span>
                 <br/>
