@@ -12,7 +12,9 @@ class Footer extends Component{
         return(
             <div className="footer">
                 <div className="footer-border"></div>
-                
+                <div className="footer-info">
+                    
+                </div>
                 <br/>
                 <span>&#xa9; Copyright 2020</span>
                 <br/>
