@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo:ital@1&display=swap');
 .navbar{
-    width: 300px;
+    width: 250px;
     height: 100vh;
-    background: purple;
+    background-image: linear-gradient(180deg, rgba(114, 33, 115,0.9), rgba(21, 7, 49,0.9));
 }    
 .profile{
     width: 100%;
@@ -36,24 +36,21 @@
 }
 .nav-links li{
     color: white;
-    text-align: center;
-    width: 100%;
-    padding-top: 20px;
-    padding-bottom:20px;
+    margin: 0px 10px;
+    padding: 16px;
     border-bottom: 1px solid white;
     cursor: pointer;
     transition: 0.3s all;
 }
 .nav-links li:hover{
-    box-shadow: 4px 4px rgba(0,0,0,0.1);
-    opacity: 0.8;
+    transform: scale(1.1);
+    background-color: rgba(0,0,0,0.2);
 }
 
 @media only screen and (max-width:1000px){
     .navbar{
-        width: 300px;
+        width: 200px;
         height: 100vh;
-        background: purple;
         z-index: 100;
         transform: translate(-100%);
         transition: 0.3s transform ease-out;
@@ -61,4 +58,18 @@
     .navbar.show{
         transform: translate(0);
     }
+}
+
+
+
+
+.icon{
+    filter: invert(1);
+    margin: 2px;
+}
+span{
+    position: relative;
+    top: -6px;
+    margin: 10px;
+    font-size: 18px;
 }

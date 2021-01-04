@@ -1,12 +1,9 @@
 .header-container{
-    width:100vw;
-    background: rgba(247,244,244,0.816);
-    box-shadow: 3px 2px rgba(0,0,0,0.1);
+    background: rgba(247,244,244,0.5);
+    box-shadow: 0px 3px rgba(0,0,0,0.1);
 }
 .header{
-    max-width: 1200px;
     display: flex;
-    margin: 0 auto;
     justify-content: space-between;
 }
 
@@ -22,9 +19,10 @@
     margin-left: 5px;
 }
 .links p{
-    background: #cc0e34;
+    background:  rgb(114, 33, 115);
     padding: 8px 1.5rem;
     color: white;
+    margin: 10px;
     font-weight: 600;
     border-radius: 5px;
     cursor: pointer;

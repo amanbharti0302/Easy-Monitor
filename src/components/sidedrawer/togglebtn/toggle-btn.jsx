@@ -1,5 +1,6 @@
 import React from 'react';
 import './toggle-btn-style.css';
+
 const ToggleBtn = ({menuToggle})=>{
     return(
         <button className="toggle-btn" onClick = {menuToggle}>

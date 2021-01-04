@@ -8,7 +8,7 @@
     justify-content: space-around;
     margin-top: 12px;
     height:24px;
-    width:36px;
+    width:30px;
     background: transparent;
     border:none;
     cursor: pointer;
@@ -20,7 +20,7 @@
 }
 
 .toggle-btn-line{
-    width:36px;
+    width:30px;
     height:3px;
     background: grey;
 }

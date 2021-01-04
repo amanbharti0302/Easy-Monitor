@@ -7,7 +7,6 @@ const DashBoard = ()=>{
             <div className="title">
                 <h2 className="title-text">Dashboard</h2>
             </div>
-            
         </div>
     )
 }
