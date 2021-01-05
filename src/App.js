@@ -1,35 +1,17 @@
-import React,{Component} from 'react';
-import Header from './components/header/header';
-import NavBar from './components/navbar/navbar';
-import DashBoard from './pages/dashboard-main/dashboard-main';
-import './App.css';
+import React from 'react';
 
-class App extends Component{
-  constructor(){
-    super();
-    this.state = {
-      sideDrawOpen: false
-    }
+
+
+const App = ()=>{
+  return(
     
-  }
-  menuToggle = ()=>{
-    this.setState((prevState)=>{
-      return(
-        {sideDrawOpen:!prevState.sideDrawOpen}
-      )
-    })
-  }
-  render(){
-    return(
       <div className="App">
-          <Header menuToggle={this.menuToggle}/>
-          <div className="dashboard">
-            <NavBar show={this.state.sideDrawOpen} />
-            <DashBoard />
-          </div>
+        
+          <h2>Krishnam</h2>
+        
       </div>
-    )
-  }
+    
+  )
 }
 
 export default App;
