@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
-import Header from '../../components/header/header';
-import NavBar from '../../components/navbar/navbar';
+import Header from '../../components/dashboard-header/header';
+import NavBar from '../../components/dashboard-navbar/navbar';
 import DashBoard from '../dashboard-main/dashboard-main';
 
 import './dashboard-control-styles.css';
