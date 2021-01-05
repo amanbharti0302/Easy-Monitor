@@ -4,20 +4,14 @@ import NavBar from './components/dashboard-navbar/navbar.jsx';
 import DashBoard from './pages/dashboard-main/dashboard-main.jsx';
 import './App.css';
 
-const initial_state={
-  sideDrawOpen: false,
-  roll: '',
-  route: 'home'
-}
-
 class App extends Component{
   constructor(){
     super();
     this.state = {
       sideDrawOpen: false,
-      roll: '',
+      student: {},
       route: 'home',
-      subject: 'SUBJECTS'
+      subject: 'Subjects'
     }
   }
   menuToggle = ()=>{
