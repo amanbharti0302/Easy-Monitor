@@ -1,7 +1,6 @@
 import React from 'react';
 import './dashboard-main-styles.css';
-
-
+import card from '../../components/cards/basic-card.jsx';
 
 const DashBoard = ()=>{
     return(
