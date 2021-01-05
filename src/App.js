@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
-import Header from './components/header/header';
-import NavBar from './components/navbar/navbar';
-import DashBoard from './pages/dashboard-main/dashboard-main';
+import Header from './components/dashboard-header/header.jsx';
+import NavBar from './components/dashboard-navbar/navbar.jsx';
+import DashBoard from './pages/dashboard-main/dashboard-main.jsx';
 import './App.css';
 
 class App extends Component{
