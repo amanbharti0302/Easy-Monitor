@@ -1,5 +1,8 @@
 .header-container{
-    background: rgba(247,244,244,0.5);
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+    background: rgb(247,244,244);
     box-shadow: 0px 3px rgba(0,0,0,0.1);
 }
 .header{
@@ -19,8 +22,8 @@
     margin-left: 5px;
 }
 .links p{
-    background:  rgb(114, 33, 115);
-    padding: 8px 1.5rem;
+    background: rgba(110, 30, 110,0.9);
+    padding: 6px 18px;
     color: white;
     margin: 10px;
     font-weight: 600;
@@ -30,6 +33,7 @@
     transition: 0.3s all;
 }
 .links p:hover{
+    background: rgba(50, 20, 80,0.9);
     box-shadow: 0px 0px rgba(0,0,0,0);
 }
 @media only screen and (max-width:1000px){

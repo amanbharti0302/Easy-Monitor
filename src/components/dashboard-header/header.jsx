@@ -2,6 +2,7 @@ import React from 'react';
 import logo from '../../assets/images/logo.png';
 import ToggleBtn from '../sidedrawer/togglebtn/toggle-btn';
 import './header-styles.css';
+
 const Header = ({menuToggle})=>{
     return(
         <div className="header-container">

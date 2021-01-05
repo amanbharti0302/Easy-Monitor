@@ -2,9 +2,19 @@
 .navbar{
     width: 250px;
     height: 100vh;
+    overflow: scroll;
     background-image: linear-gradient(180deg, rgba(114, 33, 115,0.9), rgba(21, 7, 49,0.9));
-}    
+}
+/*To hide scroll bar*/
+.navbar::-webkit-scrollbar{
+    display: none;
+}
+.navbar{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
 .profile{
+    margin: 80px 0 0 0;
     width: 100%;
     height: 250px;
     border-bottom: 1px solid rgb(250, 211, 211);
@@ -49,9 +59,8 @@
 
 @media only screen and (max-width:1000px){
     .navbar{
-        width: 200px;
-        height: 100vh;
-        z-index: 100;
+        width: 250px;
+        z-index: 1;
         transform: translate(-100%);
         transition: 0.3s transform ease-out;
     }
