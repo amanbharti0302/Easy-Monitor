@@ -4,7 +4,7 @@ import Explore from './explore-route/explore.jsx';
 import MyFiles from './myfiles-route/myfiles.jsx';
 import ContactUs from './contactus-route/contactus.jsx';
 
-const DashBoard=({route,subjects,student})=>{	
+const DashBoardMain=({route,subjects,student})=>{	
 	if(subjects==='ALL')
 		subjects=student.subjects;
 	else
@@ -19,6 +19,7 @@ const DashBoard=({route,subjects,student})=>{
 		dashboard=<MyFiles subjects={subjects} student={student}/>
 	else
 		dashboard=<ContactUs/>
+	
 	return(
         <div className="main-body">
             <div className="title">
@@ -28,4 +29,4 @@ const DashBoard=({route,subjects,student})=>{
     )
 }
 
-export default DashBoard;
+export default DashBoardMain;
