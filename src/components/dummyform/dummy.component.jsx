@@ -16,27 +16,28 @@ class Dummy extends Component{
 
     handlesubmit= e =>{
         e.preventDefault();
+
         const form = new FormData();
         form.append( 
-            "myFile", 
-            this.state.selectfile, 
-            this.state.selectfile.name 
+            'myFile', 
+            this.state.selectfile
         );
-        
-        
-        console.log(this.state.selectfile);
-        alert(this.state.selectfile);
-        
-        // $.get('http://localhost:12345/',(data)=>{
-        //     console.log(data);
-        //     alert(data);
-        // })
+        form.append("name","aman");
+        form.append("roll","1804013");
+        form.append("email","amanbharti0302@gmail.com");
+        form.append("branch","ECE");            
 
-        $.post('http://localhost:12345/prof/studentreport/',{form,name:"aman",roll:"1804013",email:"amanbharti0302@gmail.com"},(data)=>{
+        $.ajax({
+            type: "POST",
+            url: "https://hacknitpback.herokuapp.com/prof/studentreport/",
+            data: form,
+            processData: false,
+            contentType: false
+        }).done(function(data){
             console.log(data);
             alert(data);
-        })
-        
+            alert("File Uploaded Successfully");
+        });        
     }
 
 render(){
