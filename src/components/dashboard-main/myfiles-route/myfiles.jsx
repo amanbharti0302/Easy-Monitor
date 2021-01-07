@@ -24,7 +24,7 @@ class MyFiles extends Component{
 	}
 
 componentDidMount(){
-	this.setState({filename:'Please upload your answer sheet above'});
+	this.setState({filename:'*Please upload your answer sheet above'});
 	this.setState({overlay:'myfiles'});
 }
 
@@ -36,6 +36,7 @@ onfilechange = e =>{
 handlesubmit= e =>{
 	e.preventDefault();
 	if(this.state.selectfile){
+		document.getElementById('file-info').style.color='black';
 		document.getElementById('upload-sub').disabled=true;
 		document.getElementById('file').disabled=true;
 		document.getElementById('upload-sub').style.opacity=0.5;
@@ -49,6 +50,9 @@ handlesubmit= e =>{
 			this.state.selectfile, 
 			this.state.selectfile.name)
 
+	}
+	else{
+		document.getElementById('file-info').style.color='red';
 	}
 }
         
@@ -69,7 +73,7 @@ render(){
 					<h4>Due time: 5:00 PM</h4>
                 	<input type="file" id="file" onChange={this.onfilechange} className="upload-input"></input>
 					<button type="submit" id="upload-sub" onClick={this.handlesubmit} className="upload-input-btn">Submit here</button>
-					<p>{this.state.filename}</p>
+					<p id="file-info">{this.state.filename}</p>
             	</form>
 			</div>
 			</div>
