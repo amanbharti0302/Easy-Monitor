@@ -28,7 +28,9 @@ handlesubmit= e =>{
         
 
 render(){
-	console.log(this.props);
+	this.setState({student:this.props.student});
+	this.setState({subjects:this.props.subjects});
+	//console.log(this.props);
 	return(
 		<div className="myfiles">
 			<form>
