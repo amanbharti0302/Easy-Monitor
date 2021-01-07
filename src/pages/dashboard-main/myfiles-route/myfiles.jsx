@@ -39,12 +39,15 @@ render(){
 	//console.log(subjects);
 	
 	return(
+		<div>
 		<div className="myfiles">
 			<form>
-                <p>Uplaod your answersheet</p>
+                <p>Upload your answersheet</p>
                 <input type="file" onChange={this.onfilechange}></input>
                 <button type="submit" onClick={this.handlesubmit}>Submit here</button>
             </form>
+		</div>
+			
 		</div>
 	)}
 }
