@@ -3,7 +3,7 @@ import './uploaded-styles.css';
 const Uploadedtab = ()=>{
     return(
 		<div className="uploaded-myfiles">
-                <p className="upload-p">Upload your answersheet</p>
+                <p className="upload-p">Your previous uploaded answersheet</p>
 		</div>
     )
 }
