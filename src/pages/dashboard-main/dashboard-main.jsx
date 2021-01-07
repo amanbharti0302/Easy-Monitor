@@ -13,7 +13,7 @@ const DashBoard=({route,subjects,student})=>{
 	if(route==='home')
 		dashboard=<Home/>
 	else if(route==='explore')
-		dashboard=<Explore/>
+		dashboard=<Explore subjects={subjects}/>
 	else if(route==='myfiles')
 		dashboard=<MyFiles/>
 	else
