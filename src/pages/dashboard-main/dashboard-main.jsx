@@ -4,11 +4,12 @@ import Explore from './explore-route/explore.jsx';
 import MyFiles from './myfiles-route/myfiles.jsx';
 import ContactUs from './contactus-route/contactus.jsx';
 
-const DashBoard=({route,subjects,student})=>{
+const DashBoard=({route,subjects,student})=>{	
 	if(subjects==='ALL')
 		subjects=student.subjects;
 	else
 		subjects=[subjects];
+
 	let dashboard;
 	if(route==='home')
 		dashboard=<Home/>
