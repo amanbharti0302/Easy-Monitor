@@ -5,11 +5,18 @@ class MyFiles extends Component{
 	constructor(props){
 		super(props);
 		this.state={
-			selectfile:"",
-			subjects:this.props.subjects,
-			student:this.props.student
+			selectfile:""
 		}
 	}
+
+componentDidMount(){
+	this.setState({student:this.props.student});
+	this.setState({subjects:this.props.subjects});
+}
+
+componentDidUpdate(){
+	console.log(this.props);
+}
 
 onfilechange = e =>{
     this.setState({selectfile:e.target.files[0]});
@@ -23,14 +30,14 @@ handlesubmit= e =>{
         "myFile", 
         this.state.selectfile, 
 		this.state.selectfile.name)
-	//console.log(this.state.students);
 }
         
 
 render(){
-	const subjects = this.state.subjects;
+	//const subjects = this.props.subjects;
 	//const student = this.props.student;
-	console.log(subjects);
+	//console.log(subjects);
+	
 	return(
 		<div className="myfiles">
 			<form>
