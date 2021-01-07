@@ -50,6 +50,9 @@ handlesubmit= e =>{
 			this.state.selectfile.name)
 
 	}
+	else{
+		document.getElementById('file-info').style.color='red';
+	}
 }
         
 
