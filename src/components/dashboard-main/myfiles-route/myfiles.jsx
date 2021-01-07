@@ -52,6 +52,7 @@ handlesubmit= e =>{
 
 	}
 	else{
+		alert('select answersheet first');
 		document.getElementById('file-info').style.color='red';
 	}
 }
