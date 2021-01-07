@@ -1,4 +1,3 @@
-import React from 'react';
 import './basic-card-styles.css';
 
 const BasicCard = ()=>{
