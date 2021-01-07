@@ -16,6 +16,7 @@ class App extends Component{
       subject: 'ALL'
     }
   }
+
   menuToggle = ()=>{
     this.setState((prevState)=>{
       return({
@@ -23,16 +24,19 @@ class App extends Component{
       });
     })
   }
+  
   onRouteChange=(route)=>{
     this.setState({
       route: route
     });
   }
+  
   onSubChange=(subject)=>{
     this.setState({
       subject: subject
     }) 
   }
+
   render(){
     //console.log(this.state);
     const {route,student,subject,sideDrawOpen}=this.state;
