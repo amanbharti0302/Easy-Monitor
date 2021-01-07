@@ -51,6 +51,7 @@ handlesubmit= e =>{
 
 	}
 	else{
+		alert('select answersheet first');
 		document.getElementById('file-info').style.color='red';
 	}
 }
@@ -72,7 +73,7 @@ render(){
 					<h4>Due time: 5:00 PM</h4>
                 	<input type="file" id="file" onChange={this.onfilechange} className="upload-input"></input>
 					<button type="submit" id="upload-sub" onClick={this.handlesubmit} className="upload-input-btn">Submit here</button>
-					<p>{this.state.filename}</p>
+					<p id="file-info">{this.state.filename}</p>
             	</form>
 			</div>
 			</div>
