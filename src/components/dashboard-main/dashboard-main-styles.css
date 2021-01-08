@@ -3,6 +3,11 @@
     position: absolute;
     top: 40px;
     left: 240px;
+
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: right;
 }
 .title-text{
     margin-left: 2rem;
@@ -19,5 +24,10 @@
         position: absolute;
         left: 10px;
         z-index:0;
+    }
+}
+@media only screen and (min-width:800px){
+    .main-body{
+        background-size: auto 100%;
     }
 }
