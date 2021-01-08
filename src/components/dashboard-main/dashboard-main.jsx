@@ -4,19 +4,19 @@ import Explore from './explore-route/explore.jsx';
 import MyFiles from './myfiles-route/myfiles.jsx';
 import ContactUs from './contactus-route/contactus.jsx';
 
-const DashBoardMain=({route,subjects,student})=>{	
-	if(subjects==='ALL')
-		subjects=student.subjects;
+const DashBoardMain=({route,user,currsubject})=>{	
+	if(currsubject==='ALL')
+		currsubject=user.subjects;
 	else
-		subjects=[subjects];
+		currsubject=[currsubject];
 
 	let dashboard;
 	if(route==='home')
 		dashboard=<Home/>
 	else if(route==='explore')
-		dashboard=<Explore subjects={subjects}/>
+		dashboard=<Explore currsubject={currsubject}/>
 	else if(route==='myfiles')
-		dashboard=<MyFiles subjects={subjects} student={student}/>
+		dashboard=<MyFiles currsubject={currsubject} user={user}/>
 	else
 		dashboard=<ContactUs/>
 	

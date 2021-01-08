@@ -3,10 +3,10 @@ import logo from '../../assets/images/logo.png';
 import ToggleBtn from '../sidedrawer/togglebtn/toggle-btn';
 import Dropdown from '../dropdown/dropdown.js';
 
-const Header = ({student,route,subject,onSubChange,menuToggle})=>{
+const Header = ({user_subjects,route,currsubject,onSubChange,menuToggle})=>{
     let dropdown;
     if(route==='explore'||route==='myfiles')
-        dropdown=<Dropdown student={student} subject={subject} onSubChange={onSubChange}/>
+        dropdown=<Dropdown user_subjects={user_subjects} currsubject={currsubject} onSubChange={onSubChange}/>
     return(
         <div className="header-container">
             <nav className="header">
