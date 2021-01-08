@@ -12,7 +12,7 @@ class App extends Component{
       user: {
         subjects: ['HINDI','ENGLISH','MATHS','SCIENCE']
       },
-      route: 'home',
+      route: 'Home',
       currsubject: 'ALL'
     }
   }
@@ -41,8 +41,8 @@ class App extends Component{
       <div className="dashboard">
           <Header user_subjects={user.subjects} route={route} currsubject={currsubject} onSubChange={this.onSubChange} menuToggle={this.menuToggle}/>
           <div className="dashboard-navbar-main">
-            <NavBar show={sideDrawOpen} onRouteChange={this.onRouteChange}/>
-            <DashBoardMain route={route} user={user} currsubject={currsubject}/>
+            <NavBar show={sideDrawOpen} onRouteChange={this.onRouteChange} isstudent={true}/>
+            <DashBoardMain route={route} user={user} currsubject={currsubject} isstudent={true}/>
           </div>
       </div>
     )
