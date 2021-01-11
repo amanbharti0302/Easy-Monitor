@@ -16,42 +16,21 @@ const DashBoardMain=({route,user,currsubject,isstudent})=>{
 	if(isstudent)
 	{
 		background=student_background;
-		if(route==='home')
-			dashboard=<Home/>;
-		else if(route==='explore')
-			dashboard=<Explore currsubject={currsubject}/>;
-		else if(route==='myfiles')
-			dashboard=<MyFiles currsubject={currsubject} user={user}/>;
-		else
-			dashboard=<ContactUs/>;
+		if(route==='home') dashboard=<Home/>;
+		else if(route==='explore') dashboard=<Explore currsubject={currsubject}/>;
+		else if(route==='myfiles') dashboard=<MyFiles currsubject={currsubject} user={user}/>;
+		else dashboard=<ContactUs/>;
 	}
 	else
 	{
 		background=professor_background;
 	}
 	return(
-        <div className="main-body"
-        	style={
-        		{
-        			backgroundImage: `url(${background})`
-        		}
-        	}
-        >
+        <div className="main-body">
+        	<div className="main-background" style={{backgroundImage: `url(${background})`}}></div>
         	{dashboard}
         </div>
     )
 }
 
 export default DashBoardMain;
-
-/*
-style={
-         	{
-         		backgroundSize: '100%',
-         		backgroundRepeat: 'no-repeat',
-         		backgroundAttachment: 'fixed',
-         		backgroundPosition: 'center',
-         		backgroundImage: `url(${student_background})`
-         	}
-         }
-         */
