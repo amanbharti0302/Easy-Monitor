@@ -27,8 +27,3 @@
     /*font-family: 'Dancing Script', cursive;*/
     font-size: 18px;
 }
-@media only screen and (max-width:650px){
-    .cards{
-        width: 90vw;
-    }
-}
