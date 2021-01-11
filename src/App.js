@@ -29,8 +29,8 @@ class App extends Component{
       <div className="App">
         <Switch>
           <Route exact path='/' component={HomePage} />
-          <Route exact path='/login-teacher' render={()=>this.state.user?(<Redirect to='/'/>):(<FormPage setuser={this.setuser}/>)}/>
-          <Route exact path='/login-student' render={()=>this.state.user?(<Redirect to='/'/>):(<FormPage setuser={this.setuser}/>)}/>
+          <Route exact path='/login-teacher' render={()=>this.state.user?(<Redirect to='/'/>):(<FormPage logintype={'teacher'} setuser={this.setuser}/>)}/>
+          <Route exact path='/login-student' render={()=>this.state.user?(<Redirect to='/'/>):(<FormPage logintype={'student'} setuser={this.setuser}/>)}/>
         </Switch>
       </div>
     )
