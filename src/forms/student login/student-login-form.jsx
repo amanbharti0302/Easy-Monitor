@@ -5,7 +5,7 @@ const StudentLogin =({logintype,handleprofsubmit,handlestudentsubmit,handlechang
         return(
             <div className="form">
                 <div className="form-header">
-                    <h2>LOGIN</h2>
+                    <h2>{(logintype==='teacher')?`STUDENT`:`PROFESSOR`} LOGIN</h2>
                 </div>
                 <form onSubmit={(logintype==='teacher')?handleprofsubmit:handlestudentsubmit}>
                     <input id="email"  type="email" name='email' value={email} onChange={handlechange}/>
