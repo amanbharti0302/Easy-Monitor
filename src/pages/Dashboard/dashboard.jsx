@@ -1,49 +1,50 @@
-import React,{Component} from 'react';
+import React, { Component } from 'react';
 import Header from '../../components/dashboard-header/header.jsx';
 import NavBar from '../../components/dashboard-navbar/navbar.jsx';
 import DashBoardMain from '../../components/dashboard-main/dashboard-main.jsx';
 import './dashboard.css';
 
-class App extends Component{
-  constructor(){
+class App extends Component {
+  constructor() {
     super();
     this.state = {
       sideDrawOpen: false,
+
       user: {
-        subjects: ['HINDI','ENGLISH','MATHS','SCIENCE']
+        subjects: ['EC6526', 'EC6501', 'EC6502', 'EC6523']
       },
       route: 'Home',
       currsubject: 'ALL'
     }
   }
-  menuToggle = ()=>{
-    this.setState((prevState)=>{
-      return({
+  menuToggle = () => {
+    this.setState((prevState) => {
+      return ({
         sideDrawOpen: !prevState.sideDrawOpen
       });
     })
   }
-  onRouteChange=(route)=>{
+  onRouteChange = (route) => {
     this.setState({
       route: route
     });
   }
-  onSubChange=(currsubject)=>{
+  onSubChange = (currsubject) => {
     this.setState({
       currsubject: currsubject
-    }) 
+    })
   }
 
-  render(){
+  render() {
     //console.log(this.state);
-    const {route,user,currsubject,sideDrawOpen}=this.state;
-    return(
+    const { route, user, currsubject, sideDrawOpen } = this.state;
+    return (
       <div className="dashboard">
-          <Header user_subjects={user.subjects} route={route} currsubject={currsubject} onSubChange={this.onSubChange} menuToggle={this.menuToggle}/>
-          <div className="dashboard-navbar-main">
-            <NavBar show={sideDrawOpen} onRouteChange={this.onRouteChange} isstudent={true}/>
-            <DashBoardMain route={route} user={user} currsubject={currsubject} isstudent={true}/>
-          </div>
+        <Header user_subjects={user.subjects} route={route} currsubject={currsubject} onSubChange={this.onSubChange} menuToggle={this.menuToggle} />
+        <div className="dashboard-navbar-main">
+          <NavBar show={sideDrawOpen} onRouteChange={this.onRouteChange} isstudent={true} />
+          <DashBoardMain route={route} user={user} currsubject={currsubject} isstudent={true} />
+        </div>
       </div>
     )
   }

@@ -25,6 +25,28 @@ class MyFiles extends Component {
 		}
 	}
 
+	componentDidUpdate() {
+		const subject = this.props.currsubject[0];
+		if (subject != 'ALL')
+			$.post("http://localhost:12345/student/assignment", { "ass": subject }, (res) => {
+				console.log(res.status);
+				if (res.status === "success") {
+					const assignments = res.message;
+					var todo = assignments.map((el) => {
+						console.log(el);
+						const students = el.student
+
+
+
+					})
+				}
+				else {
+					alert('Invalid request');
+				}
+			})
+
+	}
+
 	componentDidMount() {
 		this.setState({ filename: '*Please upload your answer sheet above' });
 		this.setState({ overlay: 'myfiles' });
@@ -38,10 +60,10 @@ class MyFiles extends Component {
 	handlesubmit = async (e) => {
 		e.preventDefault();
 		if (this.state.selectfile) {
-			document.getElementById('file-info').style.color = 'black';		//
-			document.getElementById('upload-sub').disabled = true;			//dekho yahan ye sab upar se lagane k liye h
-			document.getElementById('file').disabled = true;				//ye sab javascript se kiye hn 
-			document.getElementById('upload-sub').style.opacity = 0.5;		//in sabko normal karna hoga
+			document.getElementById('file-info').style.color = 'black';
+			document.getElementById('upload-sub').disabled = true;
+			document.getElementById('file').disabled = true;
+			document.getElementById('upload-sub').style.opacity = 0.5;
 			document.getElementById('upload-loader').style.opacity = 1;
 			this.setState({ overlay: 'myfiles myfiles-overlay' });
 			this.setState({ message: 'It will take a few minute to process your answersheet' });
@@ -63,10 +85,7 @@ class MyFiles extends Component {
 			}).done(function (data) {
 
 				console.log(data);
-				//ab try kro
-				if (data.status == 'success') {
-					//iska matlab h ki backend mein koi error nhi hua
-					////agar succes hua to file suucssfully submitted ka dikha do
+				if (data.status === 'success') {
 					alert("File Uploaded Successfully");
 					//console.log(data.message);
 				}
@@ -78,13 +97,13 @@ class MyFiles extends Component {
 
 				document.getElementById('upload-sub').disabled = false;
 				document.getElementById('file').disabled = false;
-				document.getElementById('upload-..0sub').style.opacity = 1;		//dekho js se humlog wahan dhundhla kiye the form ko usi ko wapas normal kiye
-				document.getElementById('upload-loader').style.opacity = 0;		//js se css property ko change kiye aur loader ko invisible bnaye
+				document.getElementById('upload-..0sub').style.opacity = 1;
+				document.getElementById('upload-loader').style.opacity = 0;
 			});
 
-			this.setState({ overlay: 'myfiles' });							//js se kuch class hatye div se
-			this.setState({ message: '' });									//js se message
-			this.setState({ filename: '' });								//jaise hi sab kuch ho gya ab sab norma ho gy
+			this.setState({ overlay: 'myfiles' });
+			this.setState({ message: '' });
+			this.setState({ filename: '' });
 
 		}
 		else {
