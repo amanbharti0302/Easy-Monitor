@@ -9,11 +9,11 @@ class App extends Component{
     super();
     this.state = {
       sideDrawOpen: false,
-      student: {
+      user: {
         subjects: ['HINDI','ENGLISH','MATHS','SCIENCE']
       },
-      route: 'home',
-      subject: 'ALL'
+      route: 'Home',
+      currsubject: 'ALL'
     }
   }
   menuToggle = ()=>{
@@ -28,21 +28,21 @@ class App extends Component{
       route: route
     });
   }
-  onSubChange=(subject)=>{
+  onSubChange=(currsubject)=>{
     this.setState({
-      subject: subject
+      currsubject: currsubject
     }) 
   }
 
   render(){
     //console.log(this.state);
-    const {route,student,subject,sideDrawOpen}=this.state;
+    const {route,user,currsubject,sideDrawOpen}=this.state;
     return(
       <div className="dashboard">
-          <Header student={student} route={route} subject={subject} onSubChange={this.onSubChange} menuToggle={this.menuToggle}/>
+          <Header user_subjects={user.subjects} route={route} currsubject={currsubject} onSubChange={this.onSubChange} menuToggle={this.menuToggle}/>
           <div className="dashboard-navbar-main">
-            <NavBar show={sideDrawOpen} onRouteChange={this.onRouteChange}/>
-            <DashBoardMain route={route} subjects={subject} student={student}/>
+            <NavBar show={sideDrawOpen} onRouteChange={this.onRouteChange} isstudent={true}/>
+            <DashBoardMain route={route} user={user} currsubject={currsubject} isstudent={true}/>
           </div>
       </div>
     )

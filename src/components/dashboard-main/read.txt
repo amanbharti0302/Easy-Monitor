@@ -1,7 +1,7 @@
 Route=>
 1)home - information about the student
-2)eplore - subject details (subject specific)
-	a)graph of improvement (test1,test2,...,testn)
+2)explore - subject details (subject specific)
+	a)graph of progress (test1,test2,...,testn)
 	b)
 	c)
 	d)
