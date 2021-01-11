@@ -1,13 +1,100 @@
-import React from 'react';
+import React, { Component } from 'react';
+import $ from 'jquery';
 import StudentLogin from '../../forms/student login/student-login-form';
 import './formpage-styles.css';
 
-const FormPage=({setuser,logintype})=>{
-    return(
-        <div className="form-page">
-            <StudentLogin setuser={setuser} logintype={logintype}/>
-        </div>
-    )
+import App from '../Dashboard/dashboard';
+
+class FormPage extends Component{
+    constructor(props){
+        super(props);
+        this.state={
+          email:'',
+          password:'',
+          type:'',
+          user:''
+        }
+    }
+    
+    componentDidUpdate(){
+        const token = localStorage.getItem('token');
+        const type = localStorage.getItem('type');
+        console.log(token,type);
+    }
+    
+    setuser(type,user){
+        this.setState({type:type});
+        this.setState({user:user});
+    }
+
+    handlechange = e=>{
+        const {value,name} = e.target;
+        this.setState({[name]: value})
+    }
+    
+    handlestudentsubmit=async(e)=>{
+        try{
+            const email =await this.state.email;
+            const password =await this.state.password;
+            if(!email||!password)alert('please enter email and password both');
+            else{
+                await $.post('http://localhost:12345/student/login',{email:email,password:password},async(data)=>{
+                    if(data.status==="success"){
+                        await alert('Logged in successfully');
+                        await localStorage.setItem('token',data.token);
+                        await localStorage.setItem('type','student');
+                        this.setuser('student',data.professor);
+                        this.setState({email:'',password:''});
+                    }
+                    else{alert('Enter correct email or password');}
+                })
+            }
+            e.preventDefault();
+        }
+        catch(err){
+            alert('unsuccess');
+        }
+    }
+
+    handleprofsubmit=async(e)=>{
+        try{
+            const email =await this.state.email;
+            const password =await this.state.password;
+            if(!email||!password)alert('please enter email and password both');
+            else{
+                $.post('http://localhost:12345/prof/login',{email:email,password:password},async(data)=>{
+                    if(data.status==="success"){
+                        await alert('Logged in successfully');
+                        await localStorage.setItem('token',data.token);
+                        await localStorage.setItem('type','teacher');
+                        this.setuser('teacher',data.professor);
+                        this.setState({email:'',password:''});
+                    }
+                    else{alert('Enter correct email or password');}
+                })
+            }
+            e.preventDefault();
+        }
+        catch(err){
+            alert('unsuccess');
+        }
+    }
+
+    render(){
+        return(
+            <div>
+            {
+                this.state.user===''?
+                <div className="form-page">
+                    <StudentLogin setuser={this.setuser} logintype={this.props.logintype} handleprofsubmit={this.handleprofsubmit} handlestudentsubmit={this.handlestudentsubmit} handlechange={this.handlechange} email={this.state.email} password={this.state.password}/>            
+                </div>
+                : (this.state.type==='teacher')?
+                <App type={this.state.type} user={this.state.user}/>
+                :<App type={this.state.type} user={this.state.user}/>
+            }
+            </div>
+        )
+    }
 }
 
 export default FormPage;

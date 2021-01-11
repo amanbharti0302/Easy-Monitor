@@ -5,8 +5,8 @@ import DashBoardMain from '../../components/dashboard-main/dashboard-main.jsx';
 import './dashboard.css';
 
 class App extends Component{
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.state = {
       sideDrawOpen: false,
       user: {
@@ -16,6 +16,7 @@ class App extends Component{
       currsubject: 'ALL'
     }
   }
+
   menuToggle = ()=>{
     this.setState((prevState)=>{
       return({
@@ -23,6 +24,7 @@ class App extends Component{
       });
     })
   }
+
   onRouteChange=(route)=>{
     this.setState({
       route: route
