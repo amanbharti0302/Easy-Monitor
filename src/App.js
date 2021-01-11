@@ -1,12 +1,13 @@
-import {Component} from 'react';
-import Dashboard from './pages/Dashboard/dashboard.jsx';
+import React,{Component} from 'react';
+
+import FormPage from './pages/formpage/formpage';
 import './App.css';
 
 class App extends Component{
   render(){
     return(
       <div className="App">
-        <Dashboard/>
+          <FormPage />
       </div>
     )
   }
