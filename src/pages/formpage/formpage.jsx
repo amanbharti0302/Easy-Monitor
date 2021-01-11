@@ -15,11 +15,40 @@ class FormPage extends Component{
           user:''
         }
     }
+
     
-    componentDidUpdate(){
+    componentDidMount(){
         const token = localStorage.getItem('token');
         const type = localStorage.getItem('type');
-        console.log(token,type);
+        if(!token)
+        {this.setState({user:''});
+        this.setState({type:''});}
+
+        this.setState({type:type});
+        if(type=='teacher'){
+            $.post('http://localhost:12345/prof/getteacher',{token:token},(data)=>{
+                if(data.status==="success"){
+                    this.setState({user:data.message});
+                    this.setState({type:'teacher'});
+                }
+                else{
+                    localStorage.removeItem('token','');
+                    localStorage.removeItem('type','');
+                }
+            })
+        }
+        else{
+            $.post('http://localhost:12345/student/getstudent',{token:token},(data)=>{
+                if(data.status==="success"){
+                    this.setState({user:data.message});
+                    this.setState({type:'student'});
+                }
+                else{
+                    localStorage.removeItem('token','');
+                    localStorage.removeItem('type','');
+                }
+            })
+        }
     }
     
     setuser(type,user){
