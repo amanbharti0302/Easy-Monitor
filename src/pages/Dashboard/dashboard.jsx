@@ -38,14 +38,14 @@ class App extends Component{
   }
 
   render(){
-    //console.log(this.state);
+    const {type} = this.props;
     const {route,user,currsubject,sideDrawOpen}=this.state;
     return(
       <div className="dashboard">
           <Header user_subjects={user.subjects} route={route} currsubject={currsubject} onSubChange={this.onSubChange} menuToggle={this.menuToggle}/>
           <div className="dashboard-navbar-main">
-            <NavBar show={sideDrawOpen} onRouteChange={this.onRouteChange} isstudent={true}/>
-            <DashBoardMain route={route} user={user} currsubject={currsubject} isstudent={true}/>
+            <NavBar show={sideDrawOpen} onRouteChange={this.onRouteChange} isstudent={(type=='student')?true:false}/>
+            <DashBoardMain route={route} user={user} currsubject={currsubject} isstudent={(type=='student')?true:false}/>
           </div>
       </div>
     )

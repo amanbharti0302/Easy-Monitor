@@ -21,8 +21,10 @@ class FormPage extends Component{
         const token = localStorage.getItem('token');
         const type = localStorage.getItem('type');
         if(!token)
-        {this.setState({user:''});
-        this.setState({type:''});}
+        {
+        this.setState({user:''});
+        this.setState({type:''});
+        }
 
         this.setState({type:type});
         if(type=='teacher'){
@@ -67,7 +69,7 @@ class FormPage extends Component{
             const password =await this.state.password;
             if(!email||!password)alert('please enter email and password both');
             else{
-                await $.post('http://localhost:12345/student/login',{email:email,password:password},async(data)=>{
+                    $.post('http://localhost:12345/student/login',{email:email,password:password},async(data)=>{
                     if(data.status==="success"){
                         await alert('Logged in successfully');
                         await localStorage.setItem('token',data.token);
