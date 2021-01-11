@@ -6,6 +6,7 @@ import './dashboard.css';
 
 class App extends Component{
   constructor(props){
+    console.log(props);
     super(props);
     this.state = {
       sideDrawOpen: false,
