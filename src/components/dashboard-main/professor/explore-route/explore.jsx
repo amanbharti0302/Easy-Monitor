@@ -1,5 +1,5 @@
 import './explore.css';
-import CardGen from '../../../components/student-cardgenerator/cardgen.jsx';
+import CardGen from '../../../student-cardgenerator/cardgen.jsx';
 
 const Explore=({subjects})=>{
 	return(

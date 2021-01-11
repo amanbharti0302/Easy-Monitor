@@ -2,7 +2,7 @@ import './myfiles.css';
 import {Component} from 'react';
 import ClipLoader from "react-spinners/ClipLoader";
 import { css } from "@emotion/core";
-import Uploadedtab from '../../../components/uploaded-document/uploaded-document';
+import Uploadedtab from '../../../../components/uploaded-document/uploaded-document';
 
 const override = css`
   top:200px;

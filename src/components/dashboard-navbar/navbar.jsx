@@ -41,7 +41,31 @@ const NavBar = ({show,onRouteChange,isstudent})=>{
         );
     else
         return(
-            <div></div>
+            <div className={showClass}>
+                <div className="profile">
+                    <div className="propic">
+                        <img src={propic} alt=""/>
+                    </div>
+                </div>
+                <div className="nav-links">
+                    <li onClick={()=>onRouteChange('home')}>
+                        <img className="icon" src={homeicon} alt='icon'/>
+                        <span>Home</span>
+                    </li>
+                    <li onClick={()=>onRouteChange('explore')}>
+                        <img className="icon" src={ghosticon} alt='icon'/>
+                        <span>Student Performance</span>
+                    </li>
+                    <li onClick={()=>onRouteChange('myfiles')}>
+                        <img className="icon" src={descriptionicon} alt='icon'/>
+                        <span>Submitted Files</span>
+                    </li>
+                    <li onClick={()=>onRouteChange('contactus')}>
+                        <img className="icon" src={profileicon} alt='icon'/>
+                        <span>Admin Details</span>
+                    </li>
+                </div>
+            </div>
         );
 }
 

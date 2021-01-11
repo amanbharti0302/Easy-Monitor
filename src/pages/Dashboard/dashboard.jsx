@@ -12,7 +12,7 @@ class App extends Component{
       user: {
         subjects: ['HINDI','ENGLISH','MATHS','SCIENCE']
       },
-      route: 'Home',
+      route: 'home',
       currsubject: 'ALL'
     }
   }
