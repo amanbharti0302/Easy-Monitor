@@ -1,15 +1,15 @@
 import './dashboard-main-styles.css';
 
-import Student_Home from './student/home-route/home.jsx';
-import Student_Explore from './student/explore-route/explore.jsx';
-import Student_MyFiles from './student/myfiles-route/myfiles.jsx';
-import Student_ContactUs from './student/contactus-route/contactus.jsx';
+import StudentHome from './student/home-route/home.jsx';
+import StudentExplore from './student/explore-route/explore.jsx';
+import StudentMyFiles from './student/myfiles-route/myfiles.jsx';
+import StudentContactUs from './student/contactus-route/contactus.jsx';
 import student_background from '../../assets/images/student1.png';
 
-import Professor_Home from './professor/home-route/home.jsx';
-import Professor_Explore from './professor/explore-route/explore.jsx';
-import Professor_MyFiles from './professor/myfiles-route/myfiles.jsx';
-import Professor_ContactUs from './professor/contactus-route/contactus.jsx';
+import ProfessorHome from './professor/home-route/home.jsx';
+import ProfessorExplore from './professor/explore-route/explore.jsx';
+import ProfessorMyFiles from './professor/myfiles-route/myfiles.jsx';
+import ProfessorContactUs from './professor/contactus-route/contactus.jsx';
 import professor_background from '../../assets/images/professor1.png'
 
 const DashBoardMain=({route,user,currsubject,isstudent})=>{	
@@ -22,18 +22,18 @@ const DashBoardMain=({route,user,currsubject,isstudent})=>{
 	if(isstudent)
 	{
 		background=student_background;
-		if(route==='home') dashboard=<Student_Home user={user}/>;
-		else if(route==='explore') dashboard=<Student_Explore currsubject={currsubject} user={user}/>;
-		else if(route==='myfiles') dashboard=<Student_MyFiles currsubject={currsubject} user={user}/>;
-		else dashboard=<Student_ContactUs/>;
+		if(route==='home') dashboard=<StudentHome user={user}/>;
+		else if(route==='explore') dashboard=<StudentExplore currsubject={currsubject} user={user}/>;
+		else if(route==='myfiles') dashboard=<StudentMyFiles currsubject={currsubject} user={user}/>;
+		else dashboard=<StudentContactUs/>;
 	}
 	else
 	{
 		background=professor_background;
-		if(route==='home') dashboard=<Professor_Home user={user}/>;
-		else if(route==='explore') dashboard=<Professor_Explore currsubject={currsubject} user={user}/>;
-		else if(route==='myfiles') dashboard=<Professor_MyFiles currsubject={currsubject} user={user}/>;
-		else dashboard=<Professor_ContactUs/>;
+		if(route==='home') dashboard=<ProfessorHome user={user}/>;
+		else if(route==='explore') dashboard=<ProfessorExplore currsubject={currsubject} user={user}/>;
+		else if(route==='myfiles') dashboard=<ProfessorMyFiles currsubject={currsubject} user={user}/>;
+		else dashboard=<ProfessorContactUs/>;
 	}
 	return(
         <div className="main-body">

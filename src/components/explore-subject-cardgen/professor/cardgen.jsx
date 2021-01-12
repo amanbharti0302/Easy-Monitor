@@ -1,4 +1,4 @@
-import './cardgen.css';
+import '../cardgen.css';
 import BasicCard from '../../cards/basic-card.jsx';
 import GraphCard from '../../cards/graph-card.jsx';
 import StudentCard from '../../cards/student-card.jsx';
@@ -8,14 +8,18 @@ const cardgen=({subject,user})=>{
 	return(
 		<div className="cards">
 			<div className="subject-right"><p>{subject}</p></div>
-			<GraphCard title="Class Performance (test wise)"/>
 			<StudentCard/>
-			<BasicCard title="Forging Clustering (detecting most probable grouping within)"/>
 		</div>
 	);
 }
 
 export default cardgen;
 /*
-<GrapgCard title="Attendence Record (week wise)"/>
+<GrapgCard title="Subject Details"/>
+*/
+/*
+
+<GraphCard title="Class Performance (test wise)"/>
+<StudentCard/>
+<BasicCard title="Forging Clustering (detecting most probable grouping within)"/>
 */

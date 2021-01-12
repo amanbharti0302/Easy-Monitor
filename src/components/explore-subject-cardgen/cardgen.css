@@ -1,6 +1,7 @@
 .cards{
     display: flex;
 	flex-wrap: wrap;
+	align-items: center;
 	justify-content: center;
 	margin-bottom: 20px;
 }
@@ -20,6 +21,6 @@
 }
 @media only screen and (max-width:650px){
     .cards{
-        width: 100vw;
+        width: 96vw;
     }
 }

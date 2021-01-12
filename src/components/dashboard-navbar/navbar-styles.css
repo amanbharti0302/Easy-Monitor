@@ -14,25 +14,26 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
-.profile{
+.logo-container{
     margin: 80px 0 0 0;
     width: 100%;
-    height: 250px;
+    height: 270px;
     border-bottom: 1px solid rgb(250, 211, 211);
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.propic{
-    width: 150px;
-    height: 150px;
+.college-logo{
+    width: 180px;
+    height: 180px;
     margin-top: 2rem;
 }
-.propic>img{
+.college-logo>img{
     width: 100%;
     height: 100%;
     border-radius: 50%;
+    background: rgba(21, 7, 49,0.5);
 }
 .name p{
     color: #f1d4d4;
