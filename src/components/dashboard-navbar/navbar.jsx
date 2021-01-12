@@ -1,5 +1,5 @@
 import React from 'react';
-import propic from '../../assets/images/propic.jpg'
+import collegelogo from '../../assets/images/college-logo.png'
 import './navbar-styles.css';
 import homeicon from '../../assets/images/home-alt.svg';
 import profileicon from '../../assets/images/profile.svg';
@@ -14,9 +14,9 @@ const NavBar = ({show,onRouteChange,isstudent})=>{
     if(isstudent)
         return(
             <div className={showClass}>
-                <div className="profile">
-                    <div className="propic">
-                        <img src={propic} alt=""/>
+                <div className="logo-container">
+                    <div className="college-logo">
+                        <img src={collegelogo} alt=""/>
                     </div>
                 </div>
                 <div className="nav-links">
@@ -42,9 +42,9 @@ const NavBar = ({show,onRouteChange,isstudent})=>{
     else
         return(
             <div className={showClass}>
-                <div className="profile">
-                    <div className="propic">
-                        <img src={propic} alt=""/>
+                <div className="logo-container">
+                    <div className="college-logo">
+                        <img src={collegelogo} alt=""/>
                     </div>
                 </div>
                 <div className="nav-links">

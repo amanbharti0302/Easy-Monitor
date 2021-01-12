@@ -1,5 +1,6 @@
 import {Component} from 'react';
 import './basic-card-styles.css';
+import StudentCardPopup from '../cards/student-card-popup.jsx';
 
 class StudentCard extends Component{
     constructor(){
@@ -15,21 +16,23 @@ class StudentCard extends Component{
         });
     }
     onSubmit=()=>{
-        //fetch() and receive student data
+        //fetch() and receive student data via student roll and course name/code
+        console.log(this.state.roll);
     }
     render(){
-        console.log(this.state);
+        //console.log(this.state);
         return(
             <div className="card-body">
                 <div className="card-head-text">
+                    <h2>Student Details</h2>
+                </div> 
+                <div className="sub-body">
                     <h3>Select Student:</h3>
-                    <label>Roll No. </label>
-                    <input type="text" onChange={this.onChange} value={this.state.roll}/>
-                    <input type="submit" value="submit"/>
+                    <label id="roll-label">Roll No.</label>
+                    <input className="submit-input" type="text" onChange={this.onChange} value={this.state.roll}/>
+                    <input className="submit-btn" type="submit" onClick={this.onSubmit} value="submit"/>
                 </div>
-                <p className="sub-text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam repellat illo ducimus beatae commodi, perspiciatis, repellendus quaerat quae quos atque sapiente id laboriosam totam voluptas soluta! Commodi cum a in.
-                </p>
+                <StudentCardPopup/>
             </div>
         );
     }

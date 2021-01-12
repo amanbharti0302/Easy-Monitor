@@ -3,6 +3,7 @@
 .card-body{
     background: rgba(255,255,255,0.8);
     width: 580px;
+    height: fit-content;
     margin: 10px;
     border: 1px solid rgba(0,0,0,0.1);
     box-shadow: 3px 3px 3px rgba(120,0,120,0.6);
@@ -20,10 +21,54 @@
     font-weight: 500;
     font-size: 24px;
     color: #333;
-    /*font-family: 'Archivo', sans-serif;*/
 }
 .sub-text{
     padding: 5px 10px;
-    /*font-family: 'Dancing Script', cursive;*/
     font-size: 18px;
+}
+/*student-card styles below*/
+.sub-body{
+    background-color: rgba(110, 30, 110,0.8);
+    padding: 24px;
+    color: white;
+}
+.sub-body>h3{
+    margin: 0;
+    margin-bottom: 16px;
+}
+#roll-label{
+    margin-right: 10px;
+    font-size: 20px;
+}
+.submit-input{
+    color: rgba(110, 30, 110,0.9);
+    font-size: 20px;
+    width: 280px;
+}
+.submit-btn{
+    color: white;
+    font-size: 20px;
+    margin: 0px 5px;
+    padding: 2px;
+    border: 1px solid white;
+    width: 150px;
+    background: rgba(33, 10, 33,0.5);
+}
+.submit-btn:hover{
+    cursor: pointer;
+    background: rgba(33, 10, 33,0.7);    
+}
+.submit-input:focus,.submit-btn:focus{
+    outline: none;
+}
+@media only screen and (max-width:640px){
+    .submit-input{
+        width: 96%;
+    }
+    .submit-btn{
+        display: block;
+        margin-top: 10px;
+        margin-right: 10px;
+        margin-left: auto;
+    }
 }
