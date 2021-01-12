@@ -20,6 +20,7 @@ class FormPage extends Component{
     componentDidMount(){
         const token = localStorage.getItem('token');
         const type = localStorage.getItem('type');
+
         if(!token){
             this.setState({user:''});
             this.setState({type:''});
@@ -38,7 +39,7 @@ class FormPage extends Component{
                 }
             })
         }
-        else{
+        else{            
             $.post('http://localhost:12345/student/getstudent',{token:token},(data)=>{
                 if(data.status==="success"){
                     this.setState({user:data.message});
@@ -92,6 +93,7 @@ class FormPage extends Component{
             const password =await this.state.password;
             if(!email||!password)alert('please enter email and password both');
             else{
+
                 $.post('http://localhost:12345/prof/login',{email:email,password:password},async(data)=>{
                     if(data.status==="success"){
                         await alert('Logged in successfully');

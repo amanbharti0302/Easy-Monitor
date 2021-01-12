@@ -7,6 +7,6 @@ const ContactUs=()=>{
 			<Contactuscard/>
 		</div>
 	);
-}
+} 
 
 export default ContactUs;
