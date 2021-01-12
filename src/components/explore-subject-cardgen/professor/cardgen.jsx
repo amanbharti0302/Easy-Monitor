@@ -1,4 +1,4 @@
-import './cardgen.css';
+import '../cardgen.css';
 import BasicCard from '../../cards/basic-card.jsx';
 import GraphCard from '../../cards/graph-card.jsx';
 import StudentCard from '../../cards/student-card.jsx';
@@ -17,5 +17,9 @@ const cardgen=({subject,user})=>{
 
 export default cardgen;
 /*
-<GrapgCard title="Attendence Record (week wise)"/>
+<GrapgCard title="Subject Details"/>
+*/
+/*
+
+
 */
