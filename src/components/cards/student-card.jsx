@@ -18,7 +18,7 @@ class StudentCard extends Component{
     }
     onSubmit=()=>{
         //fetch() and receive student data via student roll and course name/code
-        console.log(this.state.roll);
+        //console.log(this.state.roll);
         this.togglePopup();
     }
     togglePopup=()=>{
@@ -27,7 +27,6 @@ class StudentCard extends Component{
         })
     }
     render(){
-        console.log(this.state.popup);
         return(
             <div className="card-body">
                 <div className="card-head-text">
@@ -39,13 +38,10 @@ class StudentCard extends Component{
                     <input className="submit-input" type="text" onChange={this.onChange} value={this.state.roll}/>
                     <input className="submit-btn" type="submit" onClick={this.onSubmit} value="submit"/>
                 </div>
-<<<<<<< HEAD
-=======
                 {
                     this.state.popup?
                     <PopupCard togglePopup={this.togglePopup}/>:<div></div>
                 }
->>>>>>> stu-dashboard
             </div>
         );
     }
