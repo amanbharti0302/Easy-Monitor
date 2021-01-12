@@ -9,6 +9,10 @@ const cardgen=({subject,user})=>{
 		<div className="cards">
 			<div className="subject-right"><p>{subject}</p></div>
 			<GraphCard title="Class Performance (test wise)"/>
+<<<<<<< HEAD
+=======
+			<BasicCard title="Forging Clustering (detecting most probable grouping within)"/>
+>>>>>>> stu-dashboard
 			<StudentCard/>
 			<BasicCard title="Forging Clustering (detecting most probable grouping within)"/>
 		</div>
