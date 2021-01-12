@@ -8,7 +8,9 @@ const cardgen=({subject,user})=>{
 	return(
 		<div className="cards">
 			<div className="subject-right"><p>{subject}</p></div>
+			<GraphCard title="Class Performance (test wise)"/>
 			<StudentCard/>
+			<BasicCard title="Forging Clustering (detecting most probable grouping within)"/>
 		</div>
 	);
 }
@@ -19,7 +21,5 @@ export default cardgen;
 */
 /*
 
-<GraphCard title="Class Performance (test wise)"/>
-<StudentCard/>
-<BasicCard title="Forging Clustering (detecting most probable grouping within)"/>
+
 */

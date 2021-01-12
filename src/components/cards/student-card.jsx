@@ -32,7 +32,6 @@ class StudentCard extends Component{
                     <input className="submit-input" type="text" onChange={this.onChange} value={this.state.roll}/>
                     <input className="submit-btn" type="submit" onClick={this.onSubmit} value="submit"/>
                 </div>
-                <StudentCardPopup/>
             </div>
         );
     }
