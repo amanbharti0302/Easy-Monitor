@@ -11,7 +11,11 @@ class App extends Component{
   render(){
     return(
       <div className="App">
-        <DashBoard/>
+        <Switch>
+        <Route exact path='/' component={HomePage} props/>
+        <Route exact path='/login-teacher' render={()=>(<FormPage logintype={'teacher'} />)}/>
+        <Route exact path='/login-student' render={()=>(<FormPage logintype={'student'} />)}/>
+        </Switch>
       </div>
     );
   }
