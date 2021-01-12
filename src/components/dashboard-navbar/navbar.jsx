@@ -54,7 +54,7 @@ const NavBar = ({show,onRouteChange,isstudent})=>{
                     </li>
                     <li onClick={()=>onRouteChange('explore')}>
                         <img className="icon" src={ghosticon} alt='icon'/>
-                        <span>Student Performance</span>
+                        <span>Explore</span>
                     </li>
                     <li onClick={()=>onRouteChange('myfiles')}>
                         <img className="icon" src={descriptionicon} alt='icon'/>
@@ -62,7 +62,7 @@ const NavBar = ({show,onRouteChange,isstudent})=>{
                     </li>
                     <li onClick={()=>onRouteChange('contactus')}>
                         <img className="icon" src={profileicon} alt='icon'/>
-                        <span>Admin Details</span>
+                        <span>Contact Us</span>
                     </li>
                 </div>
             </div>

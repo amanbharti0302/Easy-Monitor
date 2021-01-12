@@ -16,7 +16,7 @@ class App extends Component{
           <Route exact path='/login-student' render={()=>(<FormPage logintype={'student'} />)}/>
         </Switch>
       </div>
-    )
+    );
   }
 }
 
