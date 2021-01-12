@@ -28,7 +28,7 @@ class FormPage extends Component{
 
         this.setState({type:type});
         if(type==='teacher'){
-            $.post('http://localhost:12345/prof/getteacher',{token:token},(data)=>{
+            $.post('https://hacknitpback.herokuapp.com/prof/getteacher',{token:token},(data)=>{
                 if(data.status==="success"){
                     this.setState({user:data.message});
                     this.setState({type:'teacher'});
@@ -40,7 +40,7 @@ class FormPage extends Component{
             })
         }
         else{            
-            $.post('http://localhost:12345/student/getstudent',{token:token},(data)=>{
+            $.post('https://hacknitpback.herokuapp.com/student/getstudent',{token:token},(data)=>{
                 if(data.status==="success"){
                     this.setState({user:data.message});
                     this.setState({type:'student'});
@@ -69,7 +69,7 @@ class FormPage extends Component{
             const password =await this.state.password;
             if(!email||!password)alert('please enter email and password both');
             else{
-                    $.post('http://localhost:12345/student/login',{email:email,password:password},async(data)=>{
+                    $.post('https://hacknitpback.herokuapp.com/student/login',{email:email,password:password},async(data)=>{
                     if(data.status==="success"){
                         await alert('Logged in successfully');
                         await localStorage.setItem('token',data.token);
@@ -94,7 +94,7 @@ class FormPage extends Component{
             if(!email||!password)alert('please enter email and password both');
             else{
 
-                $.post('http://localhost:12345/prof/login',{email:email,password:password},async(data)=>{
+                $.post('https://hacknitpback.herokuapp.com/prof/login',{email:email,password:password},async(data)=>{
                     if(data.status==="success"){
                         await alert('Logged in successfully');
                         await localStorage.setItem('token',data.token);
