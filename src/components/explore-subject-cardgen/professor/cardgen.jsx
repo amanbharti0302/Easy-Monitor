@@ -8,6 +8,8 @@ const cardgen=({subject,user})=>{
 	return(
 		<div className="cards">
 			<div className="subject-right"><p>{subject}</p></div>
+			<GraphCard title="Class Performance (test wise)"/>
+			<BasicCard title="Forging Clustering (detecting most probable grouping within)"/>
 			<StudentCard/>
 		</div>
 	);

@@ -27,7 +27,7 @@ class StudentCard extends Component{
         })
     }
     render(){
-        //console.log(this.state);
+        console.log(this.state.popup);
         return(
             <div className="card-body">
                 <div className="card-head-text">
@@ -40,8 +40,8 @@ class StudentCard extends Component{
                     <input className="submit-btn" type="submit" onClick={this.onSubmit} value="submit"/>
                 </div>
                 {
-                    this.state.popup
-                    ?<PopupCard togglePopup={this.togglePopup}/>:<div></div>
+                    this.state.popup?
+                    <PopupCard togglePopup={this.togglePopup}/>:<div></div>
                 }
             </div>
         );
