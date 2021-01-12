@@ -1,12 +1,13 @@
 import {Component} from 'react';
 import './basic-card-styles.css';
-import StudentCardPopup from '../cards/student-card-popup.jsx';
+import PopupCard from '../cards/student-card-popup.jsx';
 
 class StudentCard extends Component{
     constructor(){
         super();
         this.state={
-            roll: "1804001"
+            roll: "1804001",
+            popup: false
         }
     }
     onChange=(event)=>{
@@ -18,6 +19,12 @@ class StudentCard extends Component{
     onSubmit=()=>{
         //fetch() and receive student data via student roll and course name/code
         console.log(this.state.roll);
+        this.togglePopup();
+    }
+    togglePopup=()=>{
+        this.setState({
+            popup: !this.state.popup
+        })
     }
     render(){
         //console.log(this.state);
@@ -32,7 +39,10 @@ class StudentCard extends Component{
                     <input className="submit-input" type="text" onChange={this.onChange} value={this.state.roll}/>
                     <input className="submit-btn" type="submit" onClick={this.onSubmit} value="submit"/>
                 </div>
-                <StudentCardPopup/>
+                {
+                    this.state.popup
+                    ?<PopupCard togglePopup={this.togglePopup}/>:<div></div>
+                }
             </div>
         );
     }

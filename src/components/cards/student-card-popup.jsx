@@ -1,6 +1,6 @@
 import './basic-card-styles.css';
 
-const BasicCard = ()=>{
+const PopupCard=(props)=>{
     const student={
         name: "Sakshi",
         coursename: "subject_name",
@@ -8,12 +8,16 @@ const BasicCard = ()=>{
         plagiarism: ['t1','t2','t3'],
     }
     return(
-        <div className="card-popup-body">
-            <p className="sub-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam repellat illo ducimus beatae commodi, perspiciatis, repellendus quaerat quae quos atque sapiente id laboriosam totam voluptas soluta! Commodi cum a in.
-            </p>
+        <div className="popup">
+            <div className="overlay"></div>
+            <div className="content">
+                <div className="close-btn" onClick={props.togglePopup()}>&times;</div>
+                <div className="student-info">
+                    Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.
+                </div>
+            </div>
         </div>
     )
 }
 
-export default BasicCard;
+export default PopupCard;
