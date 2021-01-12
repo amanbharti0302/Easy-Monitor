@@ -6,16 +6,15 @@ import './dashboard.css';
 
 class App extends Component{
   constructor(props){
-    //console.log(props.user.course);
+
     const coursearray = [];
-    props.user.course.map((el)=>{
-      coursearray.push(el.coursecode);
-    })
+    if(props.user.course)props.user.course.map((el)=>{coursearray.push(el.coursecode);})
 
     super(props);
     this.state = {
       sideDrawOpen: false,
       user: {
+        detail:props.user,
         subjects: coursearray
       },
       route: 'home',
@@ -45,7 +44,6 @@ class App extends Component{
 
   render(){
     const {type} = this.props;
-    //const type='teacher';
     const {route,user,currsubject,sideDrawOpen}=this.state;
     return(
       <div className="dashboard">
