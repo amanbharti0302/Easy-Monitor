@@ -22,16 +22,16 @@ const DashBoardMain=({route,user,currsubject,isstudent})=>{
 	if(isstudent)
 	{
 		background=student_background;
-		if(route==='home') dashboard=<Student_Home/>;
-		else if(route==='explore') dashboard=<Student_Explore currsubject={currsubject}/>;
+		if(route==='home') dashboard=<Student_Home user={user}/>;
+		else if(route==='explore') dashboard=<Student_Explore currsubject={currsubject} user={user}/>;
 		else if(route==='myfiles') dashboard=<Student_MyFiles currsubject={currsubject} user={user}/>;
 		else dashboard=<Student_ContactUs/>;
 	}
 	else
 	{
 		background=professor_background;
-		if(route==='home') dashboard=<Professor_Home/>;
-		else if(route==='explore') dashboard=<Professor_Explore currsubject={currsubject}/>;
+		if(route==='home') dashboard=<Professor_Home user={user}/>;
+		else if(route==='explore') dashboard=<Professor_Explore currsubject={currsubject} user={user}/>;
 		else if(route==='myfiles') dashboard=<Professor_MyFiles currsubject={currsubject} user={user}/>;
 		else dashboard=<Professor_ContactUs/>;
 	}

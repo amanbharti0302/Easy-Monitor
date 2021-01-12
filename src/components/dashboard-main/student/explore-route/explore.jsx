@@ -1,10 +1,10 @@
 import './explore.css';
-import CardGen from '../../../student-cardgenerator/cardgen.jsx';
+import CardGen from '../../../explore-subject-cardgen/student/cardgen.jsx'
 
-const Explore=({currsubject})=>{
+const Explore=({currsubject,user})=>{
 	let cards=[];
 	for(let i=0;i<currsubject.length;i++){
-		cards.push(<CardGen key={i} subject={currsubject[i]}/>)
+		cards.push(<CardGen key={i} subject={currsubject[i]} user={user}/>)
 	}
 	return(
 		<div>
