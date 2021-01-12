@@ -1,33 +1,22 @@
-import React,{Component} from 'react';
+import React from 'react';
 import './student-login-form-styles.css';
 
-class StudentLogin extends Component{
-    constructor(props){
-        super(props);
-        this.state={
-            email:'',
-            password:''
-        }
-    }
-
-    render(){
+const StudentLogin =({logintype,handleprofsubmit,handlestudentsubmit,handlechange,email,password})=>{
         return(
             <div className="form">
                 <div className="form-header">
-                    <h2>LOGIN</h2>
+                    <h2>{(logintype==='teacher')?`PROFESSOR`:`STUDENT`} LOGIN</h2>
                 </div>
-                <form >
-                    <input type="email" name="email"/>
-                    <input type="password" name="passowrd"/>
-                    <input type="submit" id="submit"/>
+                <form onSubmit={(logintype==='teacher')?handleprofsubmit:handlestudentsubmit}>
+                    <input id="email"  type="email" name='email' value={email} onChange={handlechange}/>
+                    <input id="password"  type="password" name='password' value={password} onChange={handlechange}/>
+                    <input type="submit" id="submit" />
                 </form>
                 <div className="form-footer">
                     <h2>Forgot password?</h2>
                 </div>
             </div>
         )
-    }
-
 }
 
 export default StudentLogin;

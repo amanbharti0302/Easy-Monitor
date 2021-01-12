@@ -15,7 +15,7 @@ const Header = ({user_subjects,route,currsubject,onSubChange,menuToggle})=>{
                     <img src={logo} alt=""/>
                 </div>
                 {dropdown}
-                <div className="links">
+                <div onClick={()=>{localStorage.removeItem('token');localStorage.removeItem('type');window.location.reload();}} className="links">
                     <p>Logout</p>
                 </div>
             </nav>

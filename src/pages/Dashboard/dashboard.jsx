@@ -5,8 +5,9 @@ import DashBoardMain from '../../components/dashboard-main/dashboard-main.jsx';
 import './dashboard.css';
 
 class App extends Component{
-  constructor(){
-    super();
+  constructor(props){
+    console.log(props);
+    super(props);
     this.state = {
       sideDrawOpen: false,
       user: {//this.props.users
@@ -16,6 +17,7 @@ class App extends Component{
       currsubject: 'ALL'
     }
   }
+
   menuToggle = ()=>{
     this.setState((prevState)=>{
       return({
@@ -23,6 +25,7 @@ class App extends Component{
       });
     })
   }
+
   onRouteChange=(route)=>{
     this.setState({
       route: route
@@ -35,15 +38,14 @@ class App extends Component{
   }
 
   render(){
-    //console.log(this.state);
-    //isstudent=this.props.isstudent
+    const {type} = this.props;
     const {route,user,currsubject,sideDrawOpen}=this.state;
     return(
       <div className="dashboard">
           <Header user_subjects={user.subjects} route={route} currsubject={currsubject} onSubChange={this.onSubChange} menuToggle={this.menuToggle}/>
           <div className="dashboard-navbar-main">
-            <NavBar show={sideDrawOpen} onRouteChange={this.onRouteChange} isstudent={false}/>
-            <DashBoardMain route={route} user={user} currsubject={currsubject} isstudent={false}/>
+            <NavBar show={sideDrawOpen} onRouteChange={this.onRouteChange} isstudent={(type=='student')?true:false}/>
+            <DashBoardMain route={route} user={user} currsubject={currsubject} isstudent={(type=='student')?true:false}/>
           </div>
       </div>
     )

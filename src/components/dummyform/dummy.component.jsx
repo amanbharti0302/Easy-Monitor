@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import $, { data } from 'jquery';
+import $ from 'jquery';
 
 class Dummy extends Component{
     constructor(){
