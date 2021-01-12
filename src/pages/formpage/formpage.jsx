@@ -20,14 +20,13 @@ class FormPage extends Component{
     componentDidMount(){
         const token = localStorage.getItem('token');
         const type = localStorage.getItem('type');
-        if(!token)
-        {
-        this.setState({user:''});
-        this.setState({type:''});
+        if(!token){
+            this.setState({user:''});
+            this.setState({type:''});
         }
 
         this.setState({type:type});
-        if(type=='teacher'){
+        if(type==='teacher'){
             $.post('http://localhost:12345/prof/getteacher',{token:token},(data)=>{
                 if(data.status==="success"){
                     this.setState({user:data.message});

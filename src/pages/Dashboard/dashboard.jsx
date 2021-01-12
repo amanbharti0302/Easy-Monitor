@@ -44,8 +44,8 @@ class App extends Component{
       <div className="dashboard">
           <Header user_subjects={user.subjects} route={route} currsubject={currsubject} onSubChange={this.onSubChange} menuToggle={this.menuToggle}/>
           <div className="dashboard-navbar-main">
-            <NavBar show={sideDrawOpen} onRouteChange={this.onRouteChange} isstudent={(type=='student')?true:false}/>
-            <DashBoardMain route={route} user={user} currsubject={currsubject} isstudent={(type=='student')?true:false}/>
+            <NavBar show={sideDrawOpen} onRouteChange={this.onRouteChange} isstudent={(type==='student')?true:false}/>
+            <DashBoardMain route={route} user={user} currsubject={currsubject} isstudent={(type==='student')?true:false}/>
           </div>
       </div>
     )
