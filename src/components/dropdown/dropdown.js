@@ -2,7 +2,7 @@ import './dropdown.css';
 
 const Dropdown=({user_subjects,currsubject,onSubChange})=>{
 	let options=[];
-    options.push(<div key={user_subjects.length} onClick={(event)=>onSubChange(event.target.innerHTML)}>ALL</div>);
+    //options.push(<div key={user_subjects.length} onClick={(event)=>onSubChange(event.target.innerHTML)}>ALL</div>);
     for(let i=0;i<user_subjects.length;i++)
         options.push(<div key={i} onClick={(event)=>onSubChange(event.target.innerHTML)}>{user_subjects[i]}</div>);
 	return(

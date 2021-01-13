@@ -18,7 +18,7 @@ class App extends Component{
         subjects: coursearray
       },
       route: 'home',
-      currsubject: 'ALL'
+      currsubject: 'course'
     }
   }
 

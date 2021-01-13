@@ -32,7 +32,7 @@ class MyFiles extends Component {
 		const rollno = user.rollno;
 		var allassignment=[];
 		
-		if (this.props.currsubject.length==1)
+		if (this.props.currsubject.length==1&&this.props.currsubject[0]!='course')
 			{
 				await $.post("https://hacknitpback.herokuapp.com/student/assignment", { "ass": subject }, async(res) => {
 				if (res.status === "success") {
@@ -51,13 +51,13 @@ class MyFiles extends Component {
 		})
 		todo=todo.filter(el=>el!=undefined);
 
-		if(todo.length!=0){
+		if(todo.length!=0&&this.props.currsubject[0]!='course'){
 			document.getElementById('assignmentname').innerHTML=todo[0].Name;
 			document.getElementById('description').innerHTML=todo[0].description;
 			document.getElementById('upload-sub').disabled = false;
 			document.getElementById('file').disabled = false;
 		}
-		else{
+		else if(this.props.currsubject[0]!='course'){
 			document.getElementById('assignmentname').innerHTML='No new works assigned';
 			document.getElementById('description').innerHTML='Currently no assignmet';
 			document.getElementById('upload-sub').disabled = true;
@@ -71,15 +71,16 @@ class MyFiles extends Component {
 		})
 		done = done.filter(el=>el!=undefined);
 		//console.log('done',done);
-		//////////////////////////////////////////////////replace allsignment with done
+		if(this.props.currsubject[0]!='course')
 		ReactDOM.render(allassignment.map((el)=>{return <Uploadedtab key={el.Name} data={el}/>}),document.getElementById('uploaded'))
 	}
 
 	async componentDidMount() {
 		this.setState({ filename: '' });
 		this.setState({ overlay: 'myfiles' });
+		if(this.props.currsubject[0]!='course'){
 		document.getElementById('upload-sub').disabled = true;
-		document.getElementById('file').disabled = true;
+		document.getElementById('file').disabled = true;}
 	}
 
 	onfilechange = e => {
@@ -136,10 +137,17 @@ class MyFiles extends Component {
 
 
 	render() {
+		const sub =this.props.currsubject[0]; 
 		return (
 			<div>
+			{
+			sub=='course'?
+			<div className="myfile-course">
+				<p>select any course</p>
+			</div>	
+			:
+			<div>
 				<div className="upload-container">
-
 					<div id="upload-loader" className="upload-loader">
 						<ClipLoader color="#000000" loading="true" css={override} size={50} />
 						<h4 className="message">{this.state.message}</h4>
@@ -161,6 +169,8 @@ class MyFiles extends Component {
 				</div>
 				<div className="footer-space"></div>
 			</div>
+			}
+		</div>
 		)
 	}
 }
