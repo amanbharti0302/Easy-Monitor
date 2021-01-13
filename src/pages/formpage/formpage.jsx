@@ -113,7 +113,7 @@ class FormPage extends Component{
     }
 
     render(){
-        if(this.state.user==undefined)this.state.user='';
+        if(this.state.user===undefined)this.state.user='';
         return(
             <div>
             {
