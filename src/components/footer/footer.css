@@ -4,13 +4,14 @@
 	text-align: center;
 	background: rgba(0,0,0,0.9);
 }
-.icon{
+.footer-icon{
+	filter: invert(1);
 	margin: 20px;
 	height: 25px;
 	width: 25px;
 	transition: all 100ms ease-in-out;
 }
-.icon:hover{
+.footer-icon:hover{
 	transform: scale(1.2);
 }
 .social{

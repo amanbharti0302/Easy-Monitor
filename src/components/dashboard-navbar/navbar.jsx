@@ -21,19 +21,19 @@ const NavBar = ({show,onRouteChange,isstudent})=>{
                 </div>
                 <div className="nav-links">
                     <li onClick={()=>onRouteChange('home')}>
-                        <img className="icon" src={homeicon} alt='icon'/>
+                        <img className="nav-icon" src={homeicon} alt='icon'/>
                         <span>Home</span>
                     </li>
                     <li onClick={()=>onRouteChange('explore')}>
-                        <img className="icon" src={ghosticon} alt='icon'/>
+                        <img className="nav-icon" src={ghosticon} alt='icon'/>
                         <span>Explore</span>
                     </li>
                     <li onClick={()=>onRouteChange('myfiles')}>
-                        <img className="icon" src={descriptionicon} alt='icon'/>
+                        <img className="nav-icon" src={descriptionicon} alt='icon'/>
                         <span>My Files</span>
                     </li>
                     <li onClick={()=>onRouteChange('contactus')}>
-                        <img className="icon" src={profileicon} alt='icon'/>
+                        <img className="nav-icon" src={profileicon} alt='icon'/>
                         <span>Contact Us</span>
                     </li>
                 </div>
@@ -49,19 +49,19 @@ const NavBar = ({show,onRouteChange,isstudent})=>{
                 </div>
                 <div className="nav-links">
                     <li onClick={()=>onRouteChange('home')}>
-                        <img className="icon" src={homeicon} alt='icon'/>
+                        <img className="nav-icon" src={homeicon} alt='icon'/>
                         <span>Home</span>
                     </li>
                     <li onClick={()=>onRouteChange('explore')}>
-                        <img className="icon" src={ghosticon} alt='icon'/>
+                        <img className="nav-icon" src={ghosticon} alt='icon'/>
                         <span>Explore</span>
                     </li>
                     <li onClick={()=>onRouteChange('myfiles')}>
-                        <img className="icon" src={descriptionicon} alt='icon'/>
+                        <img className="nav-icon" src={descriptionicon} alt='icon'/>
                         <span>Submitted Files</span>
                     </li>
                     <li onClick={()=>onRouteChange('contactus')}>
-                        <img className="icon" src={profileicon} alt='icon'/>
+                        <img className="nav-icon" src={profileicon} alt='icon'/>
                         <span>Contact Us</span>
                     </li>
                 </div>

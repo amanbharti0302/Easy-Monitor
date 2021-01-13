@@ -8,9 +8,9 @@ const footer=()=>{
 		<footer id="footer">
 			<p className="copyright">Copyright &copy; 2020 Easy Company</p>
 			<ul className="social">
-				<li><a href="#"><img src={facebook_icon} className="icon facebook"/></a></li>
-				<li><a href="#"><img src={twitter_icon} className="icon twitter"/></a></li>
-				<li><a href="#"><img src={instagram_icon} className="icon instagram"/></a></li>
+				<li><a href="#"><img src={facebook_icon} className="footer-icon facebook"/></a></li>
+				<li><a href="#"><img src={twitter_icon} className="footer-icon twitter"/></a></li>
+				<li><a href="#"><img src={instagram_icon} className="footer-icon instagram"/></a></li>
 			</ul>
 		</footer>
 	);

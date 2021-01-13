@@ -37,8 +37,9 @@
 	top: 0;*/
 	width: 400px;
 }
-.header{
-	margin-bottom: 40px;
+.header-main{
+    display: flex;
+    justify-content: space-between;
 }
 .header-banner{
 	text-align: center;
