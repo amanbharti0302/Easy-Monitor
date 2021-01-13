@@ -13,10 +13,7 @@ import ProfessorContactUs from './professor/contactus-route/contactus.jsx';
 import professor_background from '../../assets/images/professor1.png'
 
 const DashBoardMain=({route,user,currsubject,isstudent})=>{	
-	if(currsubject==='ALL')
-		currsubject=user.subjects;
-	else
-		currsubject=[currsubject];
+		currsubject=currsubject;
 
 	let dashboard,background;
 	if(isstudent)

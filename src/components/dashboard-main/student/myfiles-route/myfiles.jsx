@@ -27,12 +27,11 @@ class MyFiles extends Component {
 	}
 
 	async componentDidUpdate() {
-		const subject =await this.props.currsubject[0];
+		const subject =await this.props.currsubject;
 		const user = await this.props.user.detail;
 		const rollno = user.rollno;
 		var allassignment=[];
-		
-		if (this.props.currsubject.length==1&&this.props.currsubject[0]!='course')
+		if (this.props.currsubject!='course')
 			{
 				await $.post("https://hacknitpback.herokuapp.com/student/assignment", { "ass": subject }, async(res) => {
 				if (res.status === "success") {
@@ -43,42 +42,40 @@ class MyFiles extends Component {
 			})
 		}
 
-
 		var todo =allassignment.map((el)=>{
 			var find=false;
 			find=el.student.map((el2)=>{if(el2.rollno===rollno)return true;})
 			if(find==false)return el;
 		})
 		todo=todo.filter(el=>el!=undefined);
-
 		if(todo.length!=0&&this.props.currsubject[0]!='course'){
 			document.getElementById('assignmentname').innerHTML=todo[0].Name;
 			document.getElementById('description').innerHTML=todo[0].description;
 			document.getElementById('upload-sub').disabled = false;
 			document.getElementById('file').disabled = false;
 		}
-		else if(this.props.currsubject[0]!='course'){
+		else if(this.props.currsubject!='course'){
 			document.getElementById('assignmentname').innerHTML='No new works assigned';
 			document.getElementById('description').innerHTML='Currently no assignmet';
 			document.getElementById('upload-sub').disabled = true;
 			document.getElementById('file').disabled = true;
-		}		
-
+		}
 		var done=allassignment.filter(find=>find.length>0).map((el)=>{
 			var find=el.student.map((el2)=>{
 				if(el2.rollno===rollno)return el2;
 			})
 		})
 		done = done.filter(el=>el!=undefined);
+		
 		//console.log('done',done);
-		if(this.props.currsubject[0]!='course')
+		if(this.props.currsubject!='course')
 		ReactDOM.render(allassignment.map((el)=>{return <Uploadedtab key={el.Name} data={el}/>}),document.getElementById('uploaded'))
 	}
 
 	async componentDidMount() {
 		this.setState({ filename: '' });
 		this.setState({ overlay: 'myfiles' });
-		if(this.props.currsubject[0]!='course'){
+		if(this.props.currsubject!='course'){
 		document.getElementById('upload-sub').disabled = true;
 		document.getElementById('file').disabled = true;}
 	}
@@ -106,22 +103,22 @@ class MyFiles extends Component {
 			)
 			form.append("name", "sakshi");
 
-			// await $.ajax({
-			// 	type: "POST",
-			// 	url: "http://localhost:12345/student/myfiles",
-			// 	data: form,
-			// 	processData: false,
-			// 	contentType: false
-			// }).done(function (data) {
+			await $.ajax({
+				type: "POST",
+				url: "http://localhost:12345/student/myfiles",
+				data: form,
+				processData: false,
+				contentType: false
+			}).done(function (data) {
 
-			// 	console.log(data);
-			// 	if (data.status === 'success') {alert("File Uploaded Successfully");}
-			// 	else {console.log(data.message);}
+				console.log(data);
+				if (data.status === 'success') {alert("File Uploaded Successfully");}
+				else {console.log(data.message);}
 				document.getElementById('upload-sub').disabled = false;
 				document.getElementById('file').disabled = false;
 				document.getElementById('upload-sub').style.opacity = 1;
 				document.getElementById('upload-loader').style.opacity = 0;
-			// });
+			 });
 			alert('aman is currently working on this part so stopped this submission code');
 
 			this.setState({ overlay: 'myfiles' });
@@ -137,7 +134,7 @@ class MyFiles extends Component {
 
 
 	render() {
-		const sub =this.props.currsubject[0]; 
+		const sub =this.props.currsubject; 
 		return (
 			<div>
 			{
