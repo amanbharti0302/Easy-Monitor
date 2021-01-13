@@ -8,7 +8,7 @@ class App extends Component{
   constructor(props){
 
     const coursearray = [];
-    if(props.user.course)props.user.course.map((el)=>{coursearray.push(el.coursecode);})
+    if(props.user&&props.user.course)props.user.course.map((el)=>{coursearray.push(el.coursecode);})
 
     super(props);
     this.state = {

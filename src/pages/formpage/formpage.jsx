@@ -7,7 +7,6 @@ import App from '../Dashboard/dashboard';
 
 class FormPage extends Component{
     constructor(props){
-        //console.log(props);
         super(props);
         this.state={
           email:'',
@@ -75,7 +74,7 @@ class FormPage extends Component{
                         await alert('Logged in successfully');
                         await localStorage.setItem('token',data.token);
                         await localStorage.setItem('type','student');
-                        this.setuser('student',data.professor);
+                        this.setuser('student',data.student);
                         this.setState({email:'',password:''});
                     }
                     else{alert('Enter correct email or password');}
@@ -114,12 +113,13 @@ class FormPage extends Component{
     }
 
     render(){
+        if(this.state.user==undefined)this.state.user='';
         return(
             <div>
             {
                 this.state.user===''?
                 <div className="form-page">
-                    <StudentLogin setuser={this.setuser} logintype={this.props.logintype} handleprofsubmit={this.handleprofsubmit} handlestudentsubmit={this.handlestudentsubmit} handlechange={this.handlechange} email={this.state.email} password={this.state.password}/>            
+                    <StudentLogin logintype={this.props.logintype} handleprofsubmit={this.handleprofsubmit} handlestudentsubmit={this.handlestudentsubmit} handlechange={this.handlechange} email={this.state.email} password={this.state.password}/>            
                 </div>
                 : (this.state.type==='teacher')?
                 <App type={this.state.type} user={this.state.user}/>
