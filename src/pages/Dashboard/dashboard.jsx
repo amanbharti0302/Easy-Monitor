@@ -8,9 +8,13 @@ class App extends Component{
   constructor(props){
     super(props);
     const coursearray = [];
+<<<<<<< HEAD
     
     if(props.user.course)
       props.user.course.map((el)=>{coursearray.push(el.coursecode);})
+=======
+    if(props.user&&props.user.course)props.user.course.map((el)=>{coursearray.push(el.coursecode);})
+>>>>>>> master
 
     this.state = {
       sideDrawOpen: false,
@@ -19,7 +23,11 @@ class App extends Component{
         subjects: coursearray
       },
       route: 'home',
+<<<<<<< HEAD
       currsubject: "Course"
+=======
+      currsubject: 'course'
+>>>>>>> master
     }
   }
 

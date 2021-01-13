@@ -7,7 +7,6 @@ import App from '../Dashboard/dashboard';
 
 class FormPage extends Component{
     constructor(props){
-        //console.log(props);
         super(props);
         this.state={
           email:'',
@@ -120,6 +119,7 @@ class FormPage extends Component{
     }
 
     render(){
+        if(this.state.user===undefined)this.state.user='';
         return(
             <div>
             {

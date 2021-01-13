@@ -5,7 +5,7 @@ const Explore=({currsubject,user})=>{
 	return(
 		<div>
 			<h2 className="title-text">Explore</h2>
-            <CardGen subject={currsubject} user={user}/>
+            <CardGen currsubject={currsubject} user={user}/>
 		</div>
 	);
 }
