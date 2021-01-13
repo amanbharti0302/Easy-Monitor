@@ -6,19 +6,20 @@ import './dashboard.css';
 
 class App extends Component{
   constructor(props){
-
-    const coursearray = [];
-    if(props.user.course)props.user.course.map((el)=>{coursearray.push(el.coursecode);})
-
     super(props);
+    const coursearray = [];
+    
+    if(props.user.course)
+      props.user.course.map((el)=>{coursearray.push(el.coursecode);})
+
     this.state = {
       sideDrawOpen: false,
       user: {
-        detail:props.user,
+        detail: props.user,
         subjects: coursearray
       },
       route: 'home',
-      currsubject: 'ALL'
+      currsubject: "Course"
     }
   }
 

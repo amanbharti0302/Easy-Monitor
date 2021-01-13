@@ -23,8 +23,10 @@ class FormPage extends Component{
         const type = localStorage.getItem('type');
 
         if(!token){
-            this.setState({user:''});
-            this.setState({type:''});
+            this.setState({
+                user:'',
+                type:''
+            });
         }
 
         this.setState({type:type});
@@ -43,8 +45,10 @@ class FormPage extends Component{
         else{            
             $.post('https://hacknitpback.herokuapp.com/student/getstudent',{token:token},(data)=>{
                 if(data.status==="success"){
-                    this.setState({user:data.message});
-                    this.setState({type:'student'});
+                    this.setState({
+                        user:data.message,
+                        type:'student'
+                    });
                 }
                 else{
                     localStorage.removeItem('token','');
@@ -55,8 +59,10 @@ class FormPage extends Component{
     }
     
     setuser(type,user){
-        this.setState({type:type});
-        this.setState({user:user});
+        this.setState({
+            type:type
+            ,user:user
+        });
     }
 
     handlechange = e=>{
@@ -75,7 +81,7 @@ class FormPage extends Component{
                         await alert('Logged in successfully');
                         await localStorage.setItem('token',data.token);
                         await localStorage.setItem('type','student');
-                        this.setuser('student',data.professor);
+                        this.setuser('student',data.student);
                         this.setState({email:'',password:''});
                     }
                     else{alert('Enter correct email or password');}
@@ -119,7 +125,7 @@ class FormPage extends Component{
             {
                 this.state.user===''?
                 <div className="form-page">
-                    <StudentLogin setuser={this.setuser} logintype={this.props.logintype} handleprofsubmit={this.handleprofsubmit} handlestudentsubmit={this.handlestudentsubmit} handlechange={this.handlechange} email={this.state.email} password={this.state.password}/>            
+                    <StudentLogin logintype={this.props.logintype} handleprofsubmit={this.handleprofsubmit} handlestudentsubmit={this.handlestudentsubmit} handlechange={this.handlechange} email={this.state.email} password={this.state.password}/>            
                 </div>
                 : (this.state.type==='teacher')?
                 <App type={this.state.type} user={this.state.user}/>

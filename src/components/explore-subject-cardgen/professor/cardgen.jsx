@@ -4,10 +4,9 @@ import GraphCard from '../../cards/graph-card.jsx';
 import StudentCard from '../../cards/student-card.jsx';
 //import LargeCard from '../cards/large-rect-card.jsx';
 
-const cardgen=({subject,user})=>{
+const cardgen=({currsubject,user})=>{
 	return(
 		<div className="cards">
-			<div className="subject-right"><p>{subject}</p></div>
 			<GraphCard title="Class Performance (test wise)"/>
 			<BasicCard title="Forging Clustering (detecting most probable grouping within)"/>
 			<StudentCard/>
