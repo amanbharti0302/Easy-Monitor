@@ -9,6 +9,7 @@ import student_background from '../../assets/images/student1.png';
 import ProfessorHome from './professor/home-route/home.jsx';
 import ProfessorExplore from './professor/explore-route/explore.jsx';
 import ProfessorMyFiles from './professor/myfiles-route/myfiles.jsx';
+import ProfessorCheck from './professor/professor-check/professor-check.jsx';
 import ProfessorContactUs from './professor/contactus-route/contactus.jsx';
 import professor_background from '../../assets/images/professor1.png'
 
@@ -19,6 +20,7 @@ const DashBoardMain=({route,user,currsubject,isstudent})=>{
 		currsubject=[currsubject];
 
 	let dashboard,background;
+	
 	if(isstudent)
 	{
 		background=student_background;
@@ -29,10 +31,11 @@ const DashBoardMain=({route,user,currsubject,isstudent})=>{
 	}
 	else
 	{
-		background=professor_background;
+		background='';
 		if(route==='home') dashboard=<ProfessorHome user={user}/>;
 		else if(route==='explore') dashboard=<ProfessorExplore currsubject={currsubject} user={user}/>;
 		else if(route==='myfiles') dashboard=<ProfessorMyFiles currsubject={currsubject} user={user}/>;
+		else if(route==='checktest') dashboard=<ProfessorCheck currsubject={currsubject} user={user}/>;
 		else dashboard=<ProfessorContactUs/>;
 	}
 	return(

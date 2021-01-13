@@ -1,95 +1,67 @@
+import React,{Component} from 'react';
+import Option from './option-component/option';
 import './myfiles.css';
-import {Component} from 'react';
-import ClipLoader from "react-spinners/ClipLoader";
-import { css } from "@emotion/core";
-import Uploadedtab from '../../../uploaded-document/uploaded-document.jsx';
-
-const override = css`
-  top:200px;
-  position:relative;
-  display: block;
-  margin: 0 auto;
-  border-color: purple;
-`;
 
 class MyFiles extends Component{
-	constructor(props){
-		super(props);
+	constructor(){
+		super();
 		this.state={
-			selectfile:"",
-			filename:"Please upload your answer sheet above",
-			message:"",
-			overlay:""
+			name:'',
+			branch:'',
+			coursecode:'',
+			enrolledstudent:[],
+			assignement:[],
 		}
 	}
-
-componentDidMount(){
-	this.setState({filename:'Please upload your answer sheet above'});
-	this.setState({overlay:'myfiles'});
-}
-
-onfilechange = e =>{
-	this.setState({selectfile:e.target.files[0]});
-	this.setState({filename:e.target.files[0].name});
-}
-
-handlesubmit= e =>{
-	e.preventDefault();
-	if(this.state.selectfile){
-		document.getElementById('upload-sub').disabled=true;
-		document.getElementById('file').disabled=true;
-		document.getElementById('upload-sub').style.opacity=0.5;
-		document.getElementById('upload-loader').style.opacity=1;
-		this.setState({overlay:'myfiles myfiles-overlay'});
-		this.setState({message:'It will take a few minute to process your answersheet'});
-		
-		const form = new FormData();
-		form.append( 
-			"myFile", 
-			this.state.selectfile, 
-			this.state.selectfile.name)
-
+	handleChange = (event)=>{
+		const {value,name}=event.target;
+		this.setState({
+			[name]:value
+		})
 	}
-	else{
-		alert('select answersheet first');
-		document.getElementById('file-info').style.color='red';
+	handleStudentSelect = (e)=>{
+		let arr = [];
+		let arr1;
+		const index = arr.indexOf(e.target.value);
+		if(index>-1){
+			arr=arr.splice(index,1);
+		}
+		else{
+			arr.push(e.target.value);
+			this.setState({
+				enrolledstudent:arr
+			})
+		}
+		console.log(arr);
+	}
+	render(){
+
+		return(
+			<div className="my-files">
+				<form className="assign">
+					<input type="text" placeholder="Enter Your Full Name" name="name" onChange={this.handleChange}/><br/>
+					<input type="text" placeholder="Enter Name of the subject" name="branch" onChange={this.handleChange}/><br/>
+					<input type="text" placeholder="Enter Course Code" name="cc" onChange={this.handleChange}/><br/>
+					<select name="students" id="students">
+						<option>Select Options</option>
+						<Option value="Krishnam" onClick={this.handleStudentSelect} />
+						<Option value="Aman" onClick={this.handleStudentSelect} />
+						<Option value="Apurva" onClick={this.handleStudentSelect} />
+						<Option value="Sakshi" onClick={this.handleStudentSelect} />
+					</select>
+					<br />
+					<select name="assignements" id="assignements">
+						<option>Select Options</option>
+						<option value="Krishnam" onClick={this.handleAssignementSelect}>as01</option>
+						<option value="Aman" onClick={this.handleAssignementSelect}>as02</option>
+						<option value="Apurva" onClick={this.handleAssignementSelect}>as03</option>
+						<option value="Sakshi" onClick={this.handleAssignementSelect}>as04</option>
+					</select>
+					<br/>
+					<input type="submit" name="submit"/>
+				</form>
+			</div>
+		)
 	}
 }
-        
-
-render(){
-	return(
-		<div>
-			<div className="upload-container">
-
-			<div id="upload-loader" className="upload-loader">
-				<ClipLoader color="#000000" loading="true" css={override} size={50} />
-				<h4 className="message">{this.state.message}</h4>
-			</div>
-
-			<div id="myfiles" className={ `${this.state.overlay}`} >
-				<form className="upload-form">
-                	<p className="upload-p">Upload your answersheet</p>
-					<h4>Due time: 5:00 PM</h4>
-                	<input type="file" id="file" onChange={this.onfilechange} className="upload-input"></input>
-					<button type="submit" id="upload-sub" onClick={this.handlesubmit} className="upload-input-btn">Submit here</button>
-					<p id="file-info">{this.state.filename}</p>
-            	</form>
-			</div>
-			</div>
-
-			<div className="divider"></div>
-			<Uploadedtab/>
-			<Uploadedtab/>
-			<Uploadedtab/>
-			<Uploadedtab/>
-			<Uploadedtab/>
-			<Uploadedtab/>
-			<Uploadedtab/>
-			<Uploadedtab/>
-			<div className="footer-space"></div>
-		</div>
-	)}
-}
-
 export default MyFiles;
