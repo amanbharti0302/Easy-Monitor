@@ -1,6 +1,4 @@
-.contactus-card{
-
-}
 .contact-profile{
     display: flex;
+    align-content: space-between;
 }

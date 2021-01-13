@@ -35,9 +35,10 @@ const DashBoardMain=({route,user,currsubject,isstudent})=>{
 		else if(route==='myfiles') dashboard=<ProfessorMyFiles currsubject={currsubject} user={user}/>;
 		else dashboard=<ProfessorContactUs/>;
 	}
+
 	return(
         <div className="main-body">
-        	<div className="main-background" style={{backgroundImage: `url(${background})`}}></div>
+			{(route=='home'||route=='explore'||route=='myfiles')?<div className="main-background" style={{backgroundImage: `url(${background})`}}></div>:""}
         	{dashboard}
         </div>
     )

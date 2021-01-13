@@ -1,9 +1,10 @@
 import './uploaded-styles.css';
 
-const Uploadedtab = ()=>{
-    return(
+const Uploadedtab = ({data})=>{
+  return(
 		<div className="uploaded-myfiles">
-                <p className="upload-p">Your previous uploaded answersheet</p>
+      <h3>{data.Name}</h3>
+      <p className="upload-p">{data.description}</p>
 		</div>
     )
 }

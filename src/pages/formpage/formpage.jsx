@@ -7,6 +7,7 @@ import App from '../Dashboard/dashboard';
 
 class FormPage extends Component{
     constructor(props){
+        //console.log(props);
         super(props);
         this.state={
           email:'',
