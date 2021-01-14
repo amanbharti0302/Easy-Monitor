@@ -1,4 +1,4 @@
-import {Bar,Line} from 'react';
+import {Bar,Line} from 'react-chartjs-2';
 import './basic-card-styles.css';
 
 const BasicCard = ({title,data_labels,data_values,y_label})=>{

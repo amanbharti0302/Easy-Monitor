@@ -14,8 +14,6 @@ import ProfessorContactUs from './professor/contactus-route/contactus.jsx';
 import professor_background from '../../assets/images/professor1.png'
 
 const DashBoardMain=({route,user,currsubject,isstudent})=>{	
-		currsubject=currsubject;
-
 	let dashboard,background;
 	
 	if(isstudent)

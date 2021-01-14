@@ -1,7 +1,6 @@
 import './home.css';
 
 const Home=({user})=>{
-	console.log(user.detail);
 	let courses=[];
 	for(let i=0;i<user.detail.course.length;i++)
 		courses.push(<p key={i}>{user.detail.course[i].name} ({user.detail.course[i].coursecode})</p>);
