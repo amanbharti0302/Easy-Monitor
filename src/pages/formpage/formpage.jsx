@@ -3,7 +3,7 @@ import $ from 'jquery';
 import StudentLogin from '../../forms/student login/student-login-form';
 import './formpage-styles.css';
 
-import App from '../Dashboard/dashboard';
+import DashBoard from '../Dashboard/dashboard';
 
 class FormPage extends Component{
     constructor(props){
@@ -22,16 +22,20 @@ class FormPage extends Component{
         const type = localStorage.getItem('type');
 
         if(!token){
-            this.setState({user:''});
-            this.setState({type:''});
+            this.setState({
+                user: '',
+                type: ''
+            });
         }
 
         this.setState({type:type});
         if(type==='teacher'){
             $.post('https://hacknitpback.herokuapp.com/prof/getteacher',{token:token},(data)=>{
                 if(data.status==="success"){
-                    this.setState({user:data.message});
-                    this.setState({type:'teacher'});
+                    this.setState({
+                        user: data.message ,
+                        type: 'teacher'
+                    });
                 }
                 else{
                     localStorage.removeItem('token','');
@@ -42,8 +46,10 @@ class FormPage extends Component{
         else{            
             $.post('https://hacknitpback.herokuapp.com/student/getstudent',{token:token},(data)=>{
                 if(data.status==="success"){
-                    this.setState({user:data.message});
-                    this.setState({type:'student'});
+                    this.setState({
+                        user: data.message,
+                        type:'student'
+                    });
                 }
                 else{
                     localStorage.removeItem('token','');
@@ -54,11 +60,13 @@ class FormPage extends Component{
     }
     
     setuser(type,user){
-        this.setState({type:type});
-        this.setState({user:user});
+        this.setState({
+            type: type,
+            user: user
+        });
     }
 
-    handlechange = e=>{
+    handlechange=e=>{
         const {value,name} = e.target;
         this.setState({[name]: value})
     }
@@ -122,8 +130,8 @@ class FormPage extends Component{
                     <StudentLogin logintype={this.props.logintype} handleprofsubmit={this.handleprofsubmit} handlestudentsubmit={this.handlestudentsubmit} handlechange={this.handlechange} email={this.state.email} password={this.state.password}/>            
                 </div>
                 : (this.state.type==='teacher')?
-                <App type={this.state.type} user={this.state.user}/>
-                :<App type={this.state.type} user={this.state.user}/>
+                <DashBoard type={this.state.type} user={this.state.user}/>
+                :<DashBoard type={this.state.type} user={this.state.user}/>
             }
             </div>
         )
