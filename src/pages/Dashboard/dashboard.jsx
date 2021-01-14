@@ -46,6 +46,7 @@ class App extends Component{
   render(){
     const {type} = this.props;
     const {route,user,currsubject,sideDrawOpen}=this.state;
+
     return(
       <div className="dashboard">
           <Header user_subjects={user.subjects} route={route} currsubject={currsubject} onSubChange={this.onSubChange} menuToggle={this.menuToggle}/>
