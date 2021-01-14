@@ -3,6 +3,7 @@ import facebook_icon from '../../assets/images/facebook_icon.png';
 import twitter_icon from '../../assets/images/twitter-icon.png';
 import instagram_icon from '../../assets/images/instagram_icon.png';
 
+
 const footer=()=>{
 	return(
 		<footer id="footer">
