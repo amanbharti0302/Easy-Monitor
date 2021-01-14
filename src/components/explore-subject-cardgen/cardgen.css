@@ -1,11 +1,13 @@
 .cards{
     display: flex;
+    width: calc(100vw - 280px);
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: center;
 	margin-bottom: 20px;
 }
 .subject-right{
+	width: 100%;
 	border-top: solid rgba(0,0,0,.6);
 	width: 100%;
 	color: rgba(255,255,255,1);
@@ -19,7 +21,7 @@
 	padding: 3px 30px;
 	background: rgba(0,0,0,.7)
 }
-@media only screen and (max-width:650px){
+@media only screen and (max-width:1000px){
     .cards{
         width: 96vw;
     }

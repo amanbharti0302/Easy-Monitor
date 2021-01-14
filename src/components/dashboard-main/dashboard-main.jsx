@@ -14,10 +14,7 @@ import ProfessorContactUs from './professor/contactus-route/contactus.jsx';
 import professor_background from '../../assets/images/professor1.png'
 
 const DashBoardMain=({route,user,currsubject,isstudent})=>{	
-	if(currsubject==='ALL')
-		currsubject=user.subjects;
-	else
-		currsubject=[currsubject];
+		currsubject=currsubject;
 
 	let dashboard,background;
 	
@@ -38,9 +35,10 @@ const DashBoardMain=({route,user,currsubject,isstudent})=>{
 		else if(route==='checktest') dashboard=<ProfessorCheck currsubject={currsubject} user={user}/>;
 		else dashboard=<ProfessorContactUs/>;
 	}
+
 	return(
         <div className="main-body">
-        	<div className="main-background" style={{backgroundImage: `url(${background})`}}></div>
+			{(route=='home'||route=='explore'||route=='myfiles')?<div className="main-background" style={{backgroundImage: `url(${background})`}}></div>:""}
         	{dashboard}
         </div>
     )

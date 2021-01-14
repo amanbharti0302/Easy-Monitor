@@ -14,7 +14,7 @@ const Contactuscard = ()=>{
             <h3>Team: Lorem Ipsum 3.0</h3>
             <h4>College: National Institute Of Technology Patna</h4>
             <div className="contact-profile">
-            <Example name="Apurva" img={apurva}/>
+            <Example className="profile-card" name="Apurva" img={apurva}/>
             <Example name="Krishnam" img={Krishnam}/>
             <Example name="Sakshi Sinha" img={sakshi}/>
             <Example name="Aman Bharti" img={aman}/>

@@ -1,13 +1,19 @@
 import React, { Component } from 'react';
-import './home-page-css.css';
+import './homepage.css';
+import Header from './../../components/homepage-header/header.jsx';
+import Footer from './../../components/footer/footer.js';
 
 class HomePage extends Component{
     render(){
     return(
-        <div>
-            <h1 className="name">Hacknitp homepage temporary</h1>
-            <button onClick={()=>{this.props.history.push('/login-student')}} className="btn">Login as a student</button>
-            <button onClick={()=>{this.props.history.push('/login-teacher')}} className="btn">Login as a Professor</button>
+       	<div>
+	        <Header onLogin={(route)=>this.props.history.push(route)}/>
+	        <div className="content">
+	        	<div>
+	        		<p>Our Aim</p>
+	        	</div>
+	        </div>
+	        <Footer/>
         </div>
     )}
 }

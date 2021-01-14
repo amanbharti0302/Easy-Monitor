@@ -6,15 +6,19 @@ import './dashboard.css';
 
 class App extends Component{
   constructor(props){
-    console.log(props);
+
+    const coursearray = [];
+    if(props.user&&props.user.course)props.user.course.map((el)=>{coursearray.push(el.coursecode);})
+
     super(props);
     this.state = {
       sideDrawOpen: false,
-      user: {//this.props.users
-        subjects: ['HINDI','ENGLISH','MATHS','SCIENCE']
+      user: {
+        detail:props.user,
+        subjects: coursearray
       },
       route: 'home',
-      currsubject: 'ALL'
+      currsubject: 'course'
     }
   }
 
@@ -31,6 +35,7 @@ class App extends Component{
       route: route
     });
   }
+  
   onSubChange=(currsubject)=>{
     this.setState({
       currsubject: currsubject
@@ -39,7 +44,6 @@ class App extends Component{
 
   render(){
     const {type} = this.props;
-    //const type='teacher;
     const {route,user,currsubject,sideDrawOpen}=this.state;
 
     return(

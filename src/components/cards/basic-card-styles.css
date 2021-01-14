@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo:ital@1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
 .card-body{
-    background: rgba(255,255,255,0.8);
+    background: rgba(255,255,255,0.9);
     width: 580px;
     height: fit-content;
     margin: 10px;
@@ -26,6 +26,7 @@
     padding: 5px 10px;
     font-size: 18px;
 }
+
 /*student-card styles below*/
 .sub-body{
     background-color: rgba(110, 30, 110,0.8);
@@ -70,5 +71,57 @@
         margin-top: 10px;
         margin-right: 10px;
         margin-left: auto;
+    }
+}
+
+/*PopupCard style below*/
+.popup .overlay{
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    left: 250px;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+}
+.popup .content{
+    z-index: 3;
+    position: fixed;
+    overflow: scroll;
+    border-top-right-radius: 20px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    top: 100px;
+    left: 300px;
+    width: calc(100vw - 450px);
+    height: calc(100vh - 240px);
+    background-color: #fff;
+    text-align: center;
+    padding: 50px 40px;
+}
+.popup .content::-webkit-scrollbar{
+    display: none;
+}
+.popup .close-btn{
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 32px;
+    height: 32px;
+    background: rgba(0,0,0,0.7);
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 50%;
+}
+@media only screen and (max-width:1000px){
+    .popup .overlay{
+        left: 0;
+    }
+    .popup .content{
+        left: 60px;
+        width: calc(100vw - 230px);
     }
 }
