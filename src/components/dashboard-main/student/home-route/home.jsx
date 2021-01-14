@@ -14,8 +14,11 @@ const Home=({user})=>{
 				 	<p>{user.detail.name.toUpperCase()}</p>
 				</div>
 				<div className="card-head-text">
-				 	<h2>E-mail: </h2>
+				 	<h2>Contact Details: </h2>
+				 	<h3>E-mail: </h3>
 				 	<p><i>{user.detail.email}</i></p>
+				 	<h3>Mobile No. </h3>
+				 	<p><i>{user.detail.mobno?user.detail.mobno:"N/A"}</i></p>
 				</div>
 				<div className="card-head-text">
 				 	<h2>Branch: </h2>
