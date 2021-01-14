@@ -1,11 +1,11 @@
 import {Bar,Line} from 'react-chartjs-2';
 import './basic-card-styles.css';
 
-const BasicCard = ({title,data_labels,data_values})=>{
+const BasicCard = ({title,data_labels,data_values,y_label})=>{
     const state={
         labels: data_labels,
         datasets: [{
-            label: "%Marks",
+            label: y_label,
             backgroundColor: "rgba(128,10,128,0.8)",
             borderColor: 'rgba(0,0,0,1)',
             borderWidth: 1,
