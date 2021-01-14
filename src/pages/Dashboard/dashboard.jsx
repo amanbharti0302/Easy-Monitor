@@ -35,10 +35,18 @@ class App extends Component {
     })
   }
 
+<<<<<<< HEAD
   render() {
     //console.log(this.state);
     const { route, user, currsubject, sideDrawOpen } = this.state;
     return (
+=======
+  render(){
+    const {type} = this.props;
+    const {route,user,currsubject,sideDrawOpen}=this.state;
+
+    return(
+>>>>>>> 919998d0ec62ac95cafca691145f79119314ece9
       <div className="dashboard">
         <Header user_subjects={user.subjects} route={route} currsubject={currsubject} onSubChange={this.onSubChange} menuToggle={this.menuToggle} />
         <div className="dashboard-navbar-main">

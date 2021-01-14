@@ -139,9 +139,10 @@ class MyFiles extends Component {
 			<div>
 			{
 			sub=='course'?
-			<div className="myfile-course">
-				<p>select any course</p>
-			</div>	
+			<div>
+				<h2 className="title-text">My Files</h2>
+				<p className="title-text" style={{fontSize:"26px", background:"rgba(250,250,250,1)"}}>Select a course to <strong><i>explore</i></strong>.</p>
+			</div>
 			:
 			<div>
 				<div className="upload-container">

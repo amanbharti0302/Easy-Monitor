@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
 import StudentLogin from '../../forms/student login/student-login-form';
+import TeacherDashboard from '../Teacherdashboard/teacher-dashboard';
 import './formpage-styles.css';
 
 import App from '../Dashboard/dashboard';
@@ -113,7 +114,7 @@ class FormPage extends Component{
     }
 
     render(){
-        if(this.state.user==undefined)this.state.user='';
+        if(this.state.user===undefined)this.state.user='';
         return(
             <div>
             {
@@ -122,7 +123,7 @@ class FormPage extends Component{
                     <StudentLogin logintype={this.props.logintype} handleprofsubmit={this.handleprofsubmit} handlestudentsubmit={this.handlestudentsubmit} handlechange={this.handlechange} email={this.state.email} password={this.state.password}/>            
                 </div>
                 : (this.state.type==='teacher')?
-                <App type={this.state.type} user={this.state.user}/>
+                <TeacherDashboard  user={this.state.user}/>
                 :<App type={this.state.type} user={this.state.user}/>
             }
             </div>

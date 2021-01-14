@@ -8,12 +8,20 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.1",
+<<<<<<< HEAD
     "bootstrap": "^4.5.3",
+=======
+    "chart.js": "^2.9.4",
+>>>>>>> 919998d0ec62ac95cafca691145f79119314ece9
     "cors": "^2.8.5",
     "jquery": "^3.5.1",
     "node-sass": "^5.0.0",
     "react": "^17.0.1",
+<<<<<<< HEAD
     "react-bootstrap": "^1.4.3",
+=======
+    "react-chartjs-2": "^2.11.1",
+>>>>>>> 919998d0ec62ac95cafca691145f79119314ece9
     "react-dom": "^17.0.1",
     "react-profile-card": "^0.1.4",
     "react-router-dom": "^5.2.0",

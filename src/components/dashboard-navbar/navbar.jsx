@@ -11,7 +11,8 @@ const NavBar = ({show,onRouteChange,isstudent})=>{
     if(show){
         showClass = 'navbar show';
     }
-    if(isstudent)
+    
+    if(isstudent){
         return(
             <div className={showClass}>
                 <div className="logo-container">
@@ -38,8 +39,8 @@ const NavBar = ({show,onRouteChange,isstudent})=>{
                     </li>
                 </div>
             </div>
-        );
-    else
+        );}
+    else{
         return(
             <div className={showClass}>
                 <div className="logo-container">
@@ -60,13 +61,17 @@ const NavBar = ({show,onRouteChange,isstudent})=>{
                         <img className="nav-icon" src={descriptionicon} alt='icon'/>
                         <span>Submitted Files</span>
                     </li>
+                    <li onClick={()=>onRouteChange('checktest')}>
+                        <img className="icon" src={descriptionicon} alt='icon'/>
+                        <span>Check Test</span>
+                    </li>
                     <li onClick={()=>onRouteChange('contactus')}>
                         <img className="nav-icon" src={profileicon} alt='icon'/>
                         <span>Contact Us</span>
                     </li>
                 </div>
             </div>
-        );
+        );}
 }
 
 export default NavBar;
