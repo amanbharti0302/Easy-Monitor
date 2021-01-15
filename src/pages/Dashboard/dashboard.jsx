@@ -42,13 +42,11 @@ class App extends Component{
     const {user,currsubject,sideDrawOpen}=this.state;
     return(
       <div className="dashboard">
-        <Router>
           <Header user_subjects={user.subjects} currsubject={currsubject} onSubChange={this.onSubChange} menuToggle={this.menuToggle}/>
           <div className="dashboard-navbar-main">
             <NavBar show={sideDrawOpen} isstudent={type==='student'}/>
             <DashBoardMain user={user} currsubject={currsubject} isstudent={type==='student'}/>
           </div>
-        </Router>
       </div>
     )
   }

@@ -8,7 +8,7 @@ import Dropdown from '../dropdown/dropdown.js';
 const Header = ({user_subjects,currsubject,onSubChange,menuToggle})=>{
     let dropdown;
     const currlocation=useLocation().pathname;
-    if(currlocation==="/profile/Explore"||currlocation==="/profile/MyFiles")
+    if(currlocation==="/login-student/Explore"||currlocation==="/login-student/MyFiles")
         dropdown=<Dropdown user_subjects={user_subjects} currsubject={currsubject} onSubChange={onSubChange}/>
     return(
         <div className="header-container">
