@@ -85,7 +85,6 @@ class DashBoardMyFile extends Component{
 							<option className="course-option" value="EC6524">EC6524</option>
 						</select>
 						<div className="teacher-file-btns">
-							<input type="button" value="Add" onClick={this.handleAdd}/>
 							<input type="submit" value="Assign"/>
 						</div>
 					</form>
