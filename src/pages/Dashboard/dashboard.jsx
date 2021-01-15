@@ -1,59 +1,51 @@
-import React,{Component} from 'react';
+import React, { Component } from 'react';
 import Header from '../../components/dashboard-header/header.jsx';
 import NavBar from '../../components/dashboard-navbar/navbar.jsx';
 import DashBoardMain from '../../components/dashboard-main/dashboard-main.jsx';
 import './dashboard.css';
 
-class App extends Component{
-  constructor(props){
-
-    const coursearray = [];
-    if(props.user&&props.user.course)
-      props.user.course.map((el)=>{coursearray.push(el.coursecode);})
-
-    super(props);
+class App extends Component {
+  constructor() {
+    super();
     this.state = {
       sideDrawOpen: false,
+
       user: {
-        detail:props.user,
-        subjects: coursearray
+        subjects: ['EC6526', 'EC6501', 'EC6502', 'EC6523']
       },
       route: 'home',
       currsubject: 'course'
     }
   }
-
-  menuToggle = ()=>{
-    this.setState((prevState)=>{
-      return({
+  menuToggle = () => {
+    this.setState((prevState) => {
+      return ({
         sideDrawOpen: !prevState.sideDrawOpen
       });
     })
   }
-
-  onRouteChange=(route)=>{
+  onRouteChange = (route) => {
     this.setState({
       route: route
     });
   }
-  
-  onSubChange=(currsubject)=>{
+  onSubChange = (currsubject) => {
     this.setState({
       currsubject: currsubject
-    }) 
+    })
   }
 
-  render(){
-    const {type} = this.props;
-    const {route,user,currsubject,sideDrawOpen}=this.state;
+  render() {
+    const { type } = this.props;
+    const { route, user, currsubject, sideDrawOpen } = this.state;
 
-    return(
+    return (
       <div className="dashboard">
-          <Header user_subjects={user.subjects} route={route} currsubject={currsubject} onSubChange={this.onSubChange} menuToggle={this.menuToggle}/>
-          <div className="dashboard-navbar-main">
-            <NavBar show={sideDrawOpen} onRouteChange={this.onRouteChange} isstudent={type==='student'}/>
-            <DashBoardMain route={route} user={user} currsubject={currsubject} isstudent={type==='student'}/>
-          </div>
+        <Header user_subjects={user.subjects} route={route} currsubject={currsubject} onSubChange={this.onSubChange} menuToggle={this.menuToggle} />
+        <div className="dashboard-navbar-main">
+          <NavBar show={sideDrawOpen} onRouteChange={this.onRouteChange} isstudent={true} />
+          <DashBoardMain route={route} user={user} currsubject={currsubject} isstudent={true} />
+        </div>
       </div>
     )
   }
