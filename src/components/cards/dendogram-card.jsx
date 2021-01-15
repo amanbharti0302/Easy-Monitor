@@ -1,8 +1,7 @@
 import {Component} from 'react';
-import './basic-card-styles.css';
-import PopupCard from './student-card-popup.jsx';
+import DendoPopupCard from './dendogram-card-popup.jsx';
 
-class StudentCard extends Component{
+class DendoCard extends Component{
     constructor(){
         super();
         this.state={
@@ -30,21 +29,21 @@ class StudentCard extends Component{
         return(
             <div className="card-body">
                 <div className="card-head-text">
-                    <h2>Student Details</h2>
-                </div> 
+                    <h2>Forging Clustering (detecting most probable grouping within)</h2>
+                </div>
                 <div className="sub-body">
-                    <h3>Select Student:</h3>
-                    <label id="roll-label">Roll No.</label>
-                    <input className="submit-input" type="text" onChange={this.onChange} value={this.state.roll}/>
-                    <input className="submit-btn" type="submit" onClick={this.onSubmit} value="submit"/>
+                    <p className="sub-text">
+                        Currently 5 students have submitted out of 5.
+                    </p>
+                    <input className="submit-btn" type="submit" onClick={this.onSubmit} value="get clusters !"/>
                 </div>
                 {
                     this.state.popup?
-                    <PopupCard togglePopup={this.togglePopup}/>:<div></div>
+                    <DendoPopupCard togglePopup={this.togglePopup}/>:<div></div>
                 }
             </div>
         );
     }
 }
 
-export default StudentCard;
+export default DendoCard;

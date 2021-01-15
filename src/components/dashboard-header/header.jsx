@@ -1,11 +1,14 @@
+import {useLocation} from 'react-router-dom';
+
 import './header-styles.css';
 import logo from '../../assets/images/logo.png';
 import ToggleBtn from '../sidedrawer/togglebtn/toggle-btn';
 import Dropdown from '../dropdown/dropdown.js';
 
-const Header = ({user_subjects,route,currsubject,onSubChange,menuToggle})=>{
+const Header = ({user_subjects,currsubject,onSubChange,menuToggle})=>{
     let dropdown;
-    if(route==='explore'||route==='myfiles')
+    const currlocation=useLocation().pathname;
+    if(currlocation==="/login-student/Explore"||currlocation==="/login-student/MyFiles")
         dropdown=<Dropdown user_subjects={user_subjects} currsubject={currsubject} onSubChange={onSubChange}/>
     return(
         <div className="header-container">
