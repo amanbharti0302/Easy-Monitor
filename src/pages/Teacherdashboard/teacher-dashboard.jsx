@@ -26,7 +26,6 @@ class TeacherDashboard extends Component{
     })
   }
   render(){
-    
     return(
       <div className="teacher-dashboard-main">
           <Header menuToggle={this.menuToggle}/>
@@ -36,7 +35,7 @@ class TeacherDashboard extends Component{
             <Switch>
               <Route exact path="/login-teacher/" component={DashBoardMain}/>
               <Route exact path="/login-teacher/explore" component={DashBoardExplore}/>
-              <Route exact path="/login-teacher/assign" component={DashBoardMyFile}/>
+              <Route exact path="/login-teacher/assign"> <DashBoardMyFile user={this.props.user}/></Route>
               <Route exact path="/login-teacher/check" component={DashBoardCheck}/>
               <Route exact path="/login-teacher/contact" component={DashBoardContact}/>
             </Switch>
