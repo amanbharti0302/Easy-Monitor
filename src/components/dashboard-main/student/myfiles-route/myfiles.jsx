@@ -5,6 +5,7 @@ import ClipLoader from "react-spinners/ClipLoader";
 import { css } from "@emotion/core";
 import Uploadedtab from '../../../uploaded-document/uploaded-document';
 import $, { data } from 'jquery';
+import e from 'cors';
 
 const override = css`
   top:200px;
@@ -49,10 +50,9 @@ class MyFiles extends Component {
 						$.post("https://hacknitpback.herokuapp.com/student/getassignment",{id:el},(data)=>{
 							var find =false;
 							data.message.student.map((el)=>{
-								if(el.rollno==rollno){find=true;}
+								if(el.rollno==rollno){find=true;done.push({textid:el.id,msg:data.message});}
 							})
 							if(find==false)todo.push(data.message);
-							else done.push(data.message);
 						}).then(()=>{
 
 							if(todo.length>0)
@@ -89,6 +89,10 @@ class MyFiles extends Component {
 	onfilechange = e => {
 		this.setState({ selectfile: e.target.files[0] });
 		this.setState({ filename: e.target.files[0].name });
+	}
+
+	dwnld=(id)=>{
+		alert('id');
 	}
 
 	handlesubmit = async (e) => {
@@ -156,7 +160,7 @@ class MyFiles extends Component {
 
 					<div id="myfiles" className={`${this.state.overlay}`} >
 						<form className="upload-form">
-							<p className="upload-id" id="upload-id">Nothing</p>
+							<p className="upload-id" id="upload-id">id:None</p>
 							<p className="upload-p" id="assignmentname">No new works assigned</p>
 							<h4 id="description">Currently no assignmet</h4>
 							<input type="file" id="file" onChange={this.onfilechange} className="upload-input"></input>
