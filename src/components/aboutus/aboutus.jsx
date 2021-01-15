@@ -4,12 +4,12 @@ import aboutusimg from './../../assets/images/aboutus.jfif'
 
 function Aboutus() {
   return (
-    <div className="container2">
+    <div className="container2" id="container2">
       <img className="image-container2" src={aboutusimg} />
       <div className="vl"></div>
 
-      <div className="text-container">
-        <h3>About Us</h3>
+      <div className="text-container2">
+        <h3 id="aboutush">About Us</h3>
         <p>Cats like boxes because they are cryptic animals; they like to hide,S
         tephen Zawistowski, science adviser for the American Society for the Prevention of Cruelty to
           Animals, told Business Insider. "And a box gives them a place of safety and security</p>

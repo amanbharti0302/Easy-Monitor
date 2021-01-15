@@ -6,25 +6,25 @@ import './homepage-card.css'
 
 function Simplecard({ image, title, body }) {
     return (
-        <div className="card-container">
-            <div className="image-container" >
+        <div className="homepage-card-container" id="homepage-card-container">
+            <div className="homepage-image-container" >
                 <img src={image} alt='' />
 
             </div>
-            <div className="card-content">
-                <div className="card-title">
-                    <h3>{title}</h3>
+            <div className="homepage-card-content">
+                <div className="homepage-card-title">
+                    <h3 id="homepage-h">{title}</h3>
                 </div>
-                <div className="card-body">
-                    <p>{body}</p>
+                <div className="homepage-card-body">
+                    <p id="homepage-p">{body}</p>
                 </div>
 
             </div>
 
-            <div className="btn">
+            <div className="homepage-btn">
                 <button>
 
-                    <a href='/'>View More</a>
+                    <a id="view" href='/'>View More</a>
                 </button>
             </div>
 
