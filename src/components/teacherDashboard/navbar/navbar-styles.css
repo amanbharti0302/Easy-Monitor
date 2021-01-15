@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
 .teacher-navbar{
     width: 300px;
-    height: 100vh;
     background: purple;
+
 }    
 .teacher-profile{
     width: 100%;
@@ -17,11 +17,16 @@
     width: 150px;
     height: 150px;
     margin-top: 2rem;
+    background: lightpink;
+    border-radius:50%;
 }
 .teacher-propic>img{
     width: 100%;
     height: 100%;
     border-radius: 50%;
+}
+.teacher-name{
+    margin-top: 20px;
 }
 .teacher-name p{
     color: #f1d4d4;
