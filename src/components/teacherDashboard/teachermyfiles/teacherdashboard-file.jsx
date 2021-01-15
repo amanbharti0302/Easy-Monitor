@@ -34,6 +34,7 @@ class DashBoardMyFile extends Component{
 		})
 	}
 	handleSubmit = (event)=>{
+		//fetch();
 		event.preventDefault();
 		this.setState({
 			name:'',
