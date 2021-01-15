@@ -23,18 +23,15 @@ const DashBoardMain=({route,user,currsubject,isstudent})=>{
 		dashboard=
 		<Switch>
 			<Route exact path="/login-student/">
-				<Redirect to="/profile/Home"/>
-			</Route>
-			<Route exact path="/profile/Home">
 				<StudentHome user={user}/>
 			</Route>
-			<Route exact path="/profile/Explore">
+			<Route exact path="/login-student/Explore">
 				<StudentExplore currsubject={currsubject} user={user}/>
 			</Route>
-			<Route exact path="/profile/MyFiles">
+			<Route exact path="/login-student/MyFiles">
 				<StudentMyFiles currsubject={currsubject} user={user}/>
 			</Route>
-			<Route exact path="/profile/ContactUs">
+			<Route exact path="/login-student/ContactUs">
 				<StudentContactUs/>
 			</Route>
 		</Switch>
@@ -49,18 +46,15 @@ const DashBoardMain=({route,user,currsubject,isstudent})=>{
 		dashboard=
 		<Switch>
 			<Route exact path="/login-teacher/">
-				<Redirect to="/profile/Home"/>
-			</Route>
-			<Route exact path="/profile/Home">
 				<ProfessorHome user={user}/>
 			</Route>
-			<Route exact path="/profile/Explore">
+			<Route exact path="/login-teacher/Explore">
 				<ProfessorExplore currsubject={currsubject} user={user}/>
 			</Route>
-			<Route exact path="/profile/MyFiles">
+			<Route exact path="/login-teacher/MyFiles">
 				<ProfessorMyFiles currsubject={currsubject} user={user}/>
 			</Route>
-			<Route exact path="/profile/ContactUs">
+			<Route exact path="/login-teacher/ContactUs">
 				<ProfessorContactUs/>
 			</Route>
 		</Switch>
