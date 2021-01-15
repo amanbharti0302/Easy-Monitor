@@ -40,7 +40,7 @@
 
 .form form input[type="submit"]{
     width: 200px;
-    background: #5fbae9;
+    background: rgb(121, 97, 242);
     outline: none;
     border: none;
     color: white;
@@ -70,4 +70,27 @@
     font-size:16px;
     font-weight:600;
     color:#333;
+}
+.login-home-btn{
+    text-decoration: none;
+    font-weight: 500;
+    font-size: large;
+    padding: 7px;
+    border-radius: 3px;
+    width: 100px;
+    color: white;
+    background-color: rgb(121, 97, 242);
+    height: 100px;
+    transition: all 0.1s;
+}
+.login-home-btn:hover{
+    text-decoration: none;
+    font-weight: 500;
+    font-size: large;
+    padding: 8px;
+    border-radius: 3px;
+    width: 100px;
+    color: white;
+    background-color: rgb(87, 53, 255);
+    height: 100px;
 }
