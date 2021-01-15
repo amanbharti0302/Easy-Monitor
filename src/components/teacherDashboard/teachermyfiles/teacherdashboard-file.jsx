@@ -3,7 +3,6 @@ import './teacher-dashboard-file-styles.css';
 
 class DashBoardMyFile extends Component{
     constructor(props){
-		console.log(props);
 		
         super(props);
         this.state={
@@ -36,7 +35,6 @@ class DashBoardMyFile extends Component{
 	}
 	handleSubmit = (event)=>{
 		event.preventDefault();
-		console.log(this.state);
 		this.setState({
 			name:'',
 			branch:'',
@@ -57,6 +55,9 @@ class DashBoardMyFile extends Component{
 		}
 	}
     render(){
+    	let options=[];
+    	for(let i=0;i<this.props.user.course.length;i++)
+    		options.push(<option key={i} className="course-option" value="EC6501">{this.props.user.course[i].coursecode}</option>);
         const {name,branch,assignmentDesc} = this.state;
         return(
             <div className="teacher-file-body">
@@ -79,13 +80,9 @@ class DashBoardMyFile extends Component{
 						<br/>
 						<select className="teacher-file-course" onChange={this.handleSelect}>
 							<option className="course-option" value="default">Select an option</option>
-							<option className="course-option" value="EC6501">EC6501</option>
-							<option className="course-option" value="EC6502">EC6502</option>
-							<option className="course-option" value="EC6518">EC6518</option>
-							<option className="course-option" value="EC6524">EC6524</option>
+							{options}
 						</select>
 						<div className="teacher-file-btns">
-							<input type="button" value="Add" onClick={this.handleAdd}/>
 							<input type="submit" value="Assign"/>
 						</div>
 					</form>
