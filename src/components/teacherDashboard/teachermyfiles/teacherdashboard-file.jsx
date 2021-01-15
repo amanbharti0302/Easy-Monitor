@@ -1,9 +1,9 @@
 import React,{Component} from 'react';
+import $, { data } from 'jquery';
 import './teacher-dashboard-file-styles.css';
 
 class DashBoardMyFile extends Component{
     constructor(props){
-		
         super(props);
         this.state={
             name:'',
@@ -33,16 +33,24 @@ class DashBoardMyFile extends Component{
 			assignment:newArr
 		})
 	}
-	handleSubmit = (event)=>{
+	handleSubmit = (e)=>{
 		//fetch();
-		event.preventDefault();
-		this.setState({
-			name:'',
-			branch:'',
-			coursecode:'',
-			assignmentDesc:'',
-			assignment:[]
+		//console.log(this.state);
+		$.post('https://hacknitpback.herokuapp.com/prof/newassignment',{name:this.state.name,coursecode:this.state.coursecode,description:this.state.assignmentDesc,token:localStorage.getItem('token')},(data)=>{
+			if(data.status==="success"){
+				alert('Assignmet successfully assigned ');
+				this.setState({
+					name:'',
+					branch:'',
+					coursecode:'',
+					assignmentDesc:'',
+					assignment:[]
+				})
+			}
+			else alert(data.message);
 		})
+
+		e.preventDefault();
 	}
 	handleSelect=(event)=>{
 		if(event.target.value!=='default'){
