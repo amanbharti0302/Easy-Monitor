@@ -22,12 +22,46 @@ const DashBoardMain=({route,user,currsubject,isstudent})=>{
 		background=student_background;
 		dashboard=
 		<Switch>
-			<Route exact path="/login-student/"><Redirect to="/profile/Home"/></Route>
-			<Route exact path="/profile/Home"><StudentHome user={user}/></Route>
-			<Route exact path="/profile/Explore"><StudentExplore currsubject={currsubject} user={user}/></Route>
-			<Route exact path="/profile/MyFiles"><StudentMyFiles currsubject={currsubject} user={user}/></Route>
-			<Route exact path="/profile/ContactUs" component={StudentContactUs}/>
+			<Route exact path="/login-student/">
+				<StudentHome user={user}/>
+			</Route>
+			<Route exact path="/login-student/Explore">
+				<StudentExplore currsubject={currsubject} user={user}/>
+			</Route>
+			<Route exact path="/login-student/MyFiles">
+				<StudentMyFiles currsubject={currsubject} user={user}/>
+			</Route>
+			<Route exact path="/login-student/ContactUs">
+				<StudentContactUs/>
+			</Route>
 		</Switch>
+		// if(route==='home') dashboard=<StudentHome user={user}/>;
+		// else if(route==='explore') dashboard=<StudentExplore currsubject={currsubject} user={user}/>;
+		// else if(route==='myfiles') dashboard=<StudentMyFiles currsubject={currsubject} user={user}/>;
+		// else dashboard=<StudentContactUs/>;
+	}
+	else
+	{
+		background=professor_background;
+		dashboard=
+		<Switch>
+			<Route exact path="/login-teacher/">
+				<ProfessorHome user={user}/>
+			</Route>
+			<Route exact path="/login-teacher/Explore">
+				<ProfessorExplore currsubject={currsubject} user={user}/>
+			</Route>
+			<Route exact path="/login-teacher/MyFiles">
+				<ProfessorMyFiles currsubject={currsubject} user={user}/>
+			</Route>
+			<Route exact path="/login-teacher/ContactUs">
+				<ProfessorContactUs/>
+			</Route>
+		</Switch>
+		// if(route==='home') dashboard=<ProfessorHome user={user}/>;
+		// else if(route==='explore') dashboard=<ProfessorExplore currsubject={currsubject} user={user}/>;
+		// else if(route==='myfiles') dashboard=<ProfessorMyFiles currsubject={currsubject} user={user}/>;
+		// else dashboard=<ProfessorContactUs/>;
 	}
 
 	return(

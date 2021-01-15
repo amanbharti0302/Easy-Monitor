@@ -12,14 +12,14 @@
     transition: 0.3s;
     animation: ease-in;
     margin-top: 100px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 .container2:hover{
   transform: scale(1.1);
   box-shadow: 0px 0px 15px 0px;
 
 }
-.text-container {
+.text-container2 {
     flex: 1 1 auto;
   }
   .image-container2 {
@@ -39,9 +39,10 @@
 
    /* top: 0;*/
   }
-  h3{
+  #aboutush{
     font-family: 'Amatic SC', cursive;
     font-size: 40px;
+    text-align: center;
 
   }
 

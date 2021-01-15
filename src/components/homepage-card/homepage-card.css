@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
-.card-container{
+.homepage-card-container{
     width: 300px;
     margin-top: 60px;
     box-shadow: 0px 0px 15px -5px;
@@ -10,7 +10,7 @@
 
 
 }
-.card-container:hover{
+.homepage-card-container:hover{
     transform: scale(1.1);
     box-shadow: 0px 0px 15px 0px;
 
@@ -18,7 +18,7 @@
 
 }
 
-.image-container img{
+.homepage-image-container img{
     overflow: hidden;
     transition: 0.3s;
 
@@ -28,13 +28,13 @@
     animation: ease-in-out;
 
 }
-.image-container img:hover {
+.homepage-image-container img:hover {
     transform: scale(0.8);
     box-shadow: 0px 0px 15px 0px;
 
 }
 
-.card-content{
+.homepage-card-content{
     margin: 1rem;
     margin-top: 0.5rem;
     
@@ -43,7 +43,22 @@
     
 }
 
-h3,p {
+/*h3{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    word-wrap: break-word;
+
+}*/
+#homepage-p{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    word-wrap: break-word;
+
+
+}
+#homepage-h{
     margin: 0;
     padding: 0;
     text-align: center;
@@ -51,7 +66,7 @@ h3,p {
 
 }
 
-.card-title{
+.homepage-card-title{
     margin-bottom: 0.5rem;
     font-size: 30px;
 
@@ -59,13 +74,13 @@ h3,p {
     
     
 }
-.btn {
+.homepage-btn {
     display: flex;
     justify-content: center;
     border-radius: 3px;
 }
 
-.btn button{
+.homepage-btn button{
     padding: 0.5rem;
     background-color: white;
     border: none;
@@ -76,12 +91,12 @@ h3,p {
 
 }
 
-.btn button:hover{
+.homepage-btn button:hover{
     background: rgba(27,156,252,0.1);
     transform: scale(1.1);
 
 }
-a{
+#view{
     text-transform: uppercase;
     color: #1B9CFC;
     text-decoration: none;
@@ -91,8 +106,11 @@ a{
 
 
 }
+#view:hover{
+    color:violet
+}
 
-.card-body{
+.homepage-card-body{
     
     height: 100px;
     width: 100%;
@@ -100,6 +118,7 @@ a{
     margin-right: auto;
     font-family: 'Handlee', cursive;
      font-size: 20px;
+     /*padding: 5px;*/
 
     
     
