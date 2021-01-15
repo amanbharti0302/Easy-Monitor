@@ -1,8 +1,8 @@
-import {Bar,Line} from 'react-chartjs-2';
+import { Bar, Line } from 'react-chartjs-2';
 import './basic-card-styles.css';
 
-const BasicCard = ({title,data_labels,data_values,y_label})=>{
-    const state={
+const BasicCard = ({ title, data_labels, data_values, y_label }) => {
+    const state = {
         labels: data_labels,
         datasets: [{
             label: y_label,
@@ -12,7 +12,7 @@ const BasicCard = ({title,data_labels,data_values,y_label})=>{
             data: data_values
         }]
     }
-    return(
+    return (
         <div className="card-body graph-card">
             <div className="card-head-text">
                 <h2>{title}</h2>
@@ -20,7 +20,7 @@ const BasicCard = ({title,data_labels,data_values,y_label})=>{
                     <Bar
                         data={state}
                         options={{
-                            legend:{
+                            legend: {
                                 display: true,
                                 position: 'right'
                             }
