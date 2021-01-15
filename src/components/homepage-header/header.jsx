@@ -9,7 +9,7 @@ const header = ({ onLogin }) => {
                 <div id="company">Easy Monitor</div>
                 <nav className="header-nav">
                     <div onClick={() => onLogin('/')} className="login-btn">Home</div>
-                    <div onClick={() => onLogin('/')} className="login-btn">About Us</div>
+                    <a className="login-btn" href="#container2">About Us</a>
                     <div onClick={() => onLogin('/login-student')} className="login-btn">Student Login</div>
                     <div onClick={() => onLogin('/login-teacher')} className="login-btn">Professor Login</div>
                     <div onClick={() => onLogin('/')} className="login-btn">Contact Us</div>

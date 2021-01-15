@@ -4,7 +4,7 @@ import aboutusimg from './../../assets/images/aboutus.jfif'
 
 function Aboutus() {
   return (
-    <div className="container2">
+    <div id="container2" className="container2">
       <img className="image-container2" src={aboutusimg} />
       <div className="vl"></div>
 

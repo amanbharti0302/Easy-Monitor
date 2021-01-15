@@ -17,8 +17,6 @@ class TeacherDashboard extends Component{
       sideDrawOpen: false,
       route:'home'
     }
-    
-    
   }
   
   menuToggle = ()=>{

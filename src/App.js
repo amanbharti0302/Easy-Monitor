@@ -12,8 +12,8 @@ class App extends Component {
       <div className="App">
         <Switch>
           <Route exact path='/' component={HomePage} props />
-          <Route exact path='/login-teacher' render={() => (<FormPage logintype={'teacher'} />)} />
-          <Route exact path='/login-student' render={() => (<FormPage logintype={'student'} />)} />
+          <Route path='/login-teacher' render={() => (<FormPage logintype={'teacher'} />)} />
+          <Route path='/login-student' render={() => (<FormPage logintype={'student'} />)} />
         </Switch>
       </div>
     );
