@@ -4,16 +4,15 @@ import './App.css';
 import FormPage from './pages/formpage/formpage';
 import HomePage from './pages/HomePage/HomePage';
 
-
-
-class App extends Component {
-  render() {
-    return (
+class App extends Component{
+  render(){
+    return(
       <div className="App">
         <Switch>
           <Route exact path='/' component={HomePage} props />
           <Route path='/login-teacher' render={() => (<FormPage logintype={'teacher'} />)} />
           <Route path='/login-student' render={() => (<FormPage logintype={'student'} />)} />
+          <Redirect to="/"/>
         </Switch>
       </div>
     );

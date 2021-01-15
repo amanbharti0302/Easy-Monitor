@@ -12,7 +12,6 @@ import './teacher-dashboard-styles.css';
 class TeacherDashboard extends Component{
   constructor(props){
     super(props);
-    console.log(this.props);
     this.state = {
       sideDrawOpen: false,
       route:'home'
