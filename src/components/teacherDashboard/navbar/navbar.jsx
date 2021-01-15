@@ -1,9 +1,9 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import logo from '../../../assets/images/college-logo.png';
+import avatar from '../../../assets/images/maleavatar.png';
 
 import './navbar-styles.css';
-const NavBar = ({show,name,onRouteChange})=>{
+const NavBar = ({show,name})=>{
     let showClass = 'teacher-navbar';
     if(show){
         showClass = 'teacher-navbar show';
@@ -12,7 +12,7 @@ const NavBar = ({show,name,onRouteChange})=>{
         <div className={showClass}>
             <div className="teacher-profile">
                 <div className="teacher-propic">
-                    <img src={logo} alt=""/>
+                    <img src={avatar} alt=""/>
                 </div>
                 <div className="teacher-name">
                     <p>{name}</p>
