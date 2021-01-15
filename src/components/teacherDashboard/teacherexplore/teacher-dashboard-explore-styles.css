@@ -20,7 +20,7 @@
 @media only screen and (max-width:1000px){
     .teacher-explore-body{
         max-width:1000px;
-        position:fixed;
+        position:absolute;
         left:0;
         z-index:0;
     }
