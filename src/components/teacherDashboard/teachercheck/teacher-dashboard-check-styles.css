@@ -1,23 +1,67 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Satisfy&display=swap');
 .teacher-check-body{
     margin-top:0;
     margin-left: 5px;
-    height: 100vh;
 }
-.teacher-title-text{
+.teacher-check-title-text{
     margin-left: 2rem;
     font-size: 2.5rem;
     color:rgb(185, 67, 67);
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Satsify', cursive;
 }
-.basic-cards{
+.check-work-block{
+    margin: 1.5rem 2rem;
     display: flex;
-    margin-left: 2rem;
+    flex-direction:column;
 }
-.rect-cards{
-    margin-left: 2rem;
+.show{
+    display:block;
+}
+.hide{
+    display:none;
+}
+.check-work-card{
+    display: flex;
+    justify-content: space-between;
+    width: 750px;
+    padding: 9px 13px;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-left: 6px solid lightgreen;
+    border-radius: 4px;
+    background: #f6f6f6;
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.1);
+}
+h2.check-work-result-head{
+    margin:2rem 0rem;
+    font-family: 24px;
+    font-family: 'Satsify',cursive;
+    color:purple;
+}
+p.check-work-text{
+    font-size:20px;
+    font-family: 'Roboto',sans-serif;
+    color: rgba(250, 22, 155, 0.808);
+    font-weight: 800;
+}
+button.check-btn{
+    width: 130px;
+    padding: 4px 13px;
+    font-size: 18px;
+    outline:none;
+    cursor: pointer;
+    background: rgb(179, 50, 179);
+    color: white;
+    font-weight: 700;
+    border:none;
+    border-radius:6px; 
+    font-family:'Satisfy',cursive;
+    box-shadow:0px 0px 6px 0px rgba(56, 2, 56, 0.76);
+    transition: 0.3s;
 }
 
+button.check-btn:hover{
+    box-shadow:none;
+}
 @media only screen and (max-width:1000px){
     .teacher-check-body{
         max-width:1000px;

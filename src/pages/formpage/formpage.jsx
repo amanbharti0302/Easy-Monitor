@@ -68,6 +68,7 @@ class FormPage extends Component{
             if(!email||!password)
                 alert('please enter email and password both');
             else{
+                    document.getElementById('submit').disabled=true;
                     $.post('https://hacknitpback.herokuapp.com/student/login',{email:email,password:password},async(data)=>{
                     if(data.status==="success"){
                         await alert('Logged in successfully');
@@ -82,6 +83,7 @@ class FormPage extends Component{
                     else
                         alert('Enter correct email or password');
                 })
+                    document.getElementById('submit').disabled=false;
             }
             e.preventDefault();
         }
@@ -124,6 +126,7 @@ class FormPage extends Component{
             {
                 this.state.user===''?
                 <div className="form-page">
+                    <Link className="login-home-btn" to="/">&#8656; Go to Home</Link>
                     <Login logintype={this.props.logintype} handleprofsubmit={this.handleprofsubmit} handlestudentsubmit={this.handlestudentsubmit} handlechange={this.handlechange} email={this.state.email} password={this.state.password}/>            
                 </div>
                 :(

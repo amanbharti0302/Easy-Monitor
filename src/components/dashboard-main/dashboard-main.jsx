@@ -1,5 +1,6 @@
 import './dashboard-main-styles.css';
 import {BrowserRouter,Route,Redirect,Switch,Link} from 'react-router-dom';
+import { useHistory } from "react-router-dom";
 
 import StudentHome from './student/home-route/home.jsx';
 import StudentExplore from './student/explore-route/explore.jsx';
@@ -12,13 +13,20 @@ import ProfessorExplore from './professor/explore-route/explore.jsx';
 import ProfessorMyFiles from './professor/myfiles-route/myfiles.jsx';
 import ProfessorContactUs from './professor/contactus-route/contactus.jsx';
 import professor_background from '../../assets/images/professor1.png'
+import { Component } from 'react';
 
-const DashBoardMain=({route,user,currsubject,isstudent})=>{	
+class DashBoardMain extends Component{	
+	constructor(props){
+		super(props);
+	}
+
+	render(){
+		let {user,currsubject,isstudent}=this.props;
 		currsubject=currsubject;
 
-	let dashboard,background;
+	let dashboard,background='';
 	if(isstudent)
-	{
+	{	
 		background=student_background;
 		dashboard=
 		<Switch>
@@ -70,6 +78,6 @@ const DashBoardMain=({route,user,currsubject,isstudent})=>{
         	{dashboard}
         </div>
     )
-}
+}}
 
 export default DashBoardMain;
