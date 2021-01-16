@@ -6,14 +6,64 @@ import { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { render } from '@testing-library/react';
 //import LargeCard from '../cards/large-rect-card.jsx';
-
-
 class cardgen extends Component {
-	constructor(){
-		super();
+	constructor(props){
+		super(props);
 		this.state={
-			marks:[]
+			call:''
 		}
+	}
+
+	componentDidMount(){
+		this.setState({call:"1"});
+	}
+
+	componentDidUpdate(){
+		const {currsubject,user}=this.props;
+		const rollno = user.detail.rollno;
+		var marks=[],done=[];
+		if(currsubject!="course")
+		$.post("https://hacknitpback.herokuapp.com/student/assignment", { "ass": currsubject }, (res) => {
+			if (res.status === "success") {
+				const assignments = res.message;
+				if(assignments.length>0)
+				assignments.map((el)=>{
+					$.post("https://hacknitpback.herokuapp.com/student/getassignment",{id:el},(data)=>{
+						var find =false;
+						data.message.student.map((el)=>{
+							if(el.rollno==rollno){find=true;done.push({textid:el.id});}
+						})
+						if(find==false)done.push(null);
+					}).then(()=>{
+						var temp=[];
+						if(done.length>0)
+						done.map((el)=>{
+							if(el==null){
+								var value=[];
+								temp.push(0);
+								for(var i=1;i<=temp.length+1;i++)value.push(i);
+								ReactDOM.render(<GraphCard title="Marks Monitor (test wise marks graph)" data_labels={value} data_values={temp} y_label="%Marks" />, document.getElementById('stu-graph'));
+							}
+							else{
+								$.post("http://localhost:12345/student/gettext",{textid:el.textid},(data)=>{
+									temp.push(data.message.marks);
+								})
+								.then(()=>{
+									var value=[];
+									for(var i=1;i<=temp.length+1;i++)value.push(i);
+									ReactDOM.render(<GraphCard title="Marks Monitor (test wise marks graph)" data_labels={value} data_values={temp} y_label="%Marks" />, document.getElementById('stu-graph'));
+								})
+							}
+						});
+						else ReactDOM.render(<GraphCard title="Marks Monitor (test wise marks graph)" data_labels={[1,2,3,4,5]} data_values={[]} y_label="%Marks" />, document.getElementById('stu-graph'));
+					})
+				})
+				else{
+					ReactDOM.render(<GraphCard title="Marks Monitor (test wise marks graph)" data_labels={[1,2,3,4,5]} data_values={[]} y_label="%Marks" />, document.getElementById('stu-graph'));
+				}
+			}
+			else{ReactDOM.render(<GraphCard title="Marks Monitor (test wise marks graph)" data_labels={[1,2,3,4,5]} data_values={[]} y_label="%Marks" />, document.getElementById('stu-graph'));}
+		})
 	}
 
 	render(){
@@ -31,41 +81,6 @@ class cardgen extends Component {
 			<p className="title-text" style={{fontSize:"26px", background:"rgba(250,250,250,1)"}}>Select a course to <strong><i>explore</i></strong>.</p>
 		);
 	else{	
-		const rollno = user.detail.rollno;
-		
-		var marks=[],done=[];
-		$.post("https://hacknitpback.herokuapp.com/student/assignment", { "ass": currsubject }, (res) => {
-			if (res.status === "success") {
-				const assignments = res.message;
-				if(assignments.length>0)
-				assignments.map((el)=>{
-					$.post("https://hacknitpback.herokuapp.com/student/getassignment",{id:el},(data)=>{
-						var find =false;
-						data.message.student.map((el)=>{
-							if(el.rollno==rollno){find=true;done.push({textid:el.id});}
-						})
-						if(find==false)done.push(null);
-					}).then(()=>{
-						var temp=[];
-						var value=[];
-						done.map((el)=>{
-							if(el==null)temp.push(0);
-							else{
-								$.post("http://localhost:12345/student/gettext",{textid:el.textid},(data)=>{
-									temp.push(data.message.marks);
-								})
-								.then(()=>{
-									for(var i=1;i<=temp.length+1;i++)value.push(i);
-									ReactDOM.render(<GraphCard title="Marks Monitor (test wise marks graph)" data_labels={value} data_values={temp} y_label="%Marks" />, document.getElementById('stu-graph'));
-								})
-							}
-						});
-					})
-				})
-			}
-			else{console.log('error');}
-		})
-
 		return(
 			<div className="cards">
 				<div className="card-body">
