@@ -80,20 +80,21 @@
     z-index: 2;
     position: fixed;
     top: 0;
-    left: 250px;
+    left: 0px;
     width: 100vw;
     height: 100vh;
     background: rgba(0,0,0,0.5);
 }
 .popup .content{
     z-index: 3;
-    position: fixed;
+    position: absolute;
     overflow: scroll;
     border-top-right-radius: 20px;
     -ms-overflow-style: none;
     scrollbar-width: none;
-    top: 100px;
-    left: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
     width: calc(100vw - 450px);
     height: calc(100vh - 240px);
     background-color: #fff;
