@@ -56,7 +56,7 @@ class cardgen extends Component {
 								})
 								.then(()=>{
 									for(var i=1;i<=temp.length+1;i++)value.push(i);
-									ReactDOM.render(<GraphCard title="Marks Monitor (test wise marks graph)" data_labels={[1,2,3,4,5]} data_values={temp} y_label="%Marks" />, document.getElementById('stu-graph'));
+									ReactDOM.render(<GraphCard title="Marks Monitor (test wise marks graph)" data_labels={value} data_values={temp} y_label="%Marks" />, document.getElementById('stu-graph'));
 								})
 							}
 						});
