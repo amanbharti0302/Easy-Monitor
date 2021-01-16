@@ -2,12 +2,7 @@ import {Component} from 'react';
 import './basic-card-styles.css';
 import PopupCard from './student-card-popup.jsx';
 
-const student={
-    name: "Sakshi",
-    coursename: "subject_name",
-    attendence: "75%",
-    plagiarism: ['t1','t2','t3']
-};
+var student={};
 class StudentCard extends Component{
     constructor(props){
         super(props);
@@ -28,7 +23,7 @@ class StudentCard extends Component{
         });
     }
     onSubmit=()=>{
-        fetch('https://hacknitpback.herokuapp.com/text/assignment-details',{
+        fetch('http://localhost:12345/text/assignment-details',{
             method: 'post',
             headers: {'Content-Type':'application/json'},
             body: JSON.stringify(
@@ -39,32 +34,9 @@ class StudentCard extends Component{
         })
         .then(res=>res.json())
         .then(data=>{
-            console.log(data);
+            student=data;
             this.togglePopup();
         })
-        /*
-        fetch('http://localhost:12345/python/plagiarism',{
-            method: 'post',
-            headers: {'Content-Type':'application/json'},
-            body: JSON.stringify(
-            [
-                {
-                    roll: 0,
-                    text: "Digital image processing is the use of a digital computer to process digital images through an algorithm.[1][2] As a subcategory or field of digital signal processing, digital image processing has many advantages over analog image processing. It allows a much wider range of algorithms to be applied to the input data and can avoid problems such as the build-up of noise and distortion during processing."
-                }
-            ]
-          )
-        })
-        .then(res=>res.json())
-        .then(data=>{
-            console.log(data);
-            this.togglePopup();
-        })
-        .catch(err=>alert("failed to scrap web"))
-        */
-        //this.togglePopup();
-        //fetch() and receive student data via student roll and course name/code
-        //console.log(this.state.roll);
     }
     togglePopup=()=>{
         this.setState({
