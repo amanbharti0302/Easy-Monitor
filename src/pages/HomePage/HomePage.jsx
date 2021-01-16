@@ -10,11 +10,6 @@ import attend from './../../assets/images/attend.png'
 import Aboutus from "./../../components/aboutus/aboutus";
 
 
-
-
-
-
-
 class HomePage extends Component {
 	render() {
 		return (

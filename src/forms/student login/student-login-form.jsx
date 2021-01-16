@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './student-login-form-styles.css';
 
 const StudentLogin =({logintype,handleprofsubmit,handlestudentsubmit,handlechange,email,password})=>{
@@ -14,6 +15,7 @@ const StudentLogin =({logintype,handleprofsubmit,handlestudentsubmit,handlechang
                 </form>
                 <div className="form-footer">
                     <h2>Forgot password?</h2>
+                    <Link className="login-home-btn" to="/">Go to Home</Link>
                 </div>
             </div>
         )

@@ -40,7 +40,7 @@
 
 .form form input[type="submit"]{
     width: 200px;
-    background: #5fbae9;
+    background: rgb(121, 97, 242);
     outline: none;
     border: none;
     color: white;

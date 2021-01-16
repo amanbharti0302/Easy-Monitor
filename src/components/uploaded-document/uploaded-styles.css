@@ -15,3 +15,22 @@
     transform: translate(0.5px,0.5px);
     box-shadow: 1px 1px 3px rgba(21, 7, 49,0.9);
 }
+.upload-dwnld{
+    text-decoration: none;
+    color: white;
+    border-radius: 4px;
+    padding: 7px;
+    font-weight: 500;
+    width: 100px;
+    background-color: rgba(114, 33, 115,0.9);
+    transition: all 0.1s;
+}
+.upload-dwnld:hover{
+    text-decoration: none;
+    color: white;
+    border-radius: 4px;
+    padding: 8px;
+    font-weight: 500;
+    width: 100px;
+    background-color: rgba(114, 33, 115,0.9);
+}

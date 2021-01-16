@@ -1,9 +1,9 @@
 import React,{Component} from 'react';
+import $, { data } from 'jquery';
 import './teacher-dashboard-file-styles.css';
 
 class DashBoardMyFile extends Component{
     constructor(props){
-		
         super(props);
         this.state={
             name:'',
@@ -33,17 +33,28 @@ class DashBoardMyFile extends Component{
 			assignment:newArr
 		})
 	}
-	handleSubmit = (event)=>{
-		event.preventDefault();
-		this.setState({
-			name:'',
-			branch:'',
-			coursecode:'',
-			assignmentDesc:'',
-			assignment:[]
+	handleSubmit = (e)=>{
+		//fetch();
+		//console.log(this.state);
+		//alert(this.state.coursecode);
+		$.post('https://hacknitpback.herokuapp.com/prof/newassignment',{name:this.state.name,coursecode:this.state.coursecode,description:this.state.assignmentDesc,token:localStorage.getItem('token')},(data)=>{
+			if(data.status==="success"){
+				alert('Assignmet successfully assigned ');
+				this.setState({
+					name:'',
+					branch:'',
+					coursecode:'',
+					assignmentDesc:'',
+					assignment:[]
+				})
+			}
+			else alert(data.message);
 		})
+
+		e.preventDefault();
 	}
 	handleSelect=(event)=>{
+		//alert(event.target.value);
 		if(event.target.value!=='default'){
 		this.setState({
 			coursecode:event.target.value
@@ -57,7 +68,7 @@ class DashBoardMyFile extends Component{
     render(){
     	let options=[];
     	for(let i=0;i<this.props.user.course.length;i++)
-    		options.push(<option key={i} className="course-option" value="EC6501">{this.props.user.course[i].coursecode}</option>);
+    		options.push(<option key={i} className="course-option" value={this.props.user.course[i].coursecode}>{this.props.user.course[i].coursecode}</option>);
         const {name,branch,assignmentDesc} = this.state;
         return(
             <div className="teacher-file-body">

@@ -1,15 +1,10 @@
 import './basic-card-styles.css';
 
 const PopupCard=(props)=>{
-    const student={
-        name: "Sakshi",
-        coursename: "subject_name",
-        attendence: "75%",
-        plagiarism: ['t1','t2','t3'],
-    }
+    const student=props.student;
     let plagiarism=[];
     for(let i=0;i<student.plagiarism.length;i++)
-        plagiarism.push(<p>plagiarism in {student.plagiarism[i]}: ...</p>)
+        plagiarism.push(<p key={i}>plagiarism in {student.plagiarism[i]}: ...</p>)
     return(
         <div className="popup">
             <div className="overlay"></div>
