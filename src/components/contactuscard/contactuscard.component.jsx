@@ -11,13 +11,17 @@ import Krishnam from '../../assets/images/propic.jpg';
 const Contactuscard = ()=>{
     return(
         <div className="contactus-card">
-            <h3>Team: Lorem Ipsum 3.0</h3>
-            <h4>College: National Institute Of Technology Patna</h4>
+            <h3 className="contact-us-h3">Team: Lorem Ipsum 3.0</h3>
+            <h4 className="contact-us-h4">College: National Institute Of Technology Patna</h4>
             <div className="contact-profile">
+            <div className="contact-profile-part-1">
             <Example className="profile-card" name="Apurva" img={apurva}/>
-            <Example name="Krishnam" img={Krishnam}/>
-            <Example name="Sakshi Sinha" img={sakshi}/>
-            <Example name="Aman Bharti" img={aman}/>
+            <Example className="profile-card" name="Krishnam" img={Krishnam}/>
+            </div>
+            <div className="contact-profile-part-2">
+            <Example className="profile-card" name="Sakshi Sinha" img={sakshi}/>
+            <Example className="profile-card" name="Aman Bharti" img={aman}/>
+            </div>
             </div>
             <h3></h3>
         </div>
