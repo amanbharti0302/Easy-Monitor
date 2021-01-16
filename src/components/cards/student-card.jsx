@@ -28,7 +28,7 @@ class StudentCard extends Component{
         });
     }
     onSubmit=()=>{
-        fetch('http://localhost:12345/text/assignment-details',{
+        fetch('https://hacknitpback.herokuapp.com/text/assignment-details',{
             method: 'post',
             headers: {'Content-Type':'application/json'},
             body: JSON.stringify(

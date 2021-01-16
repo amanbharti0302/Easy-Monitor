@@ -40,7 +40,7 @@ class DendoCard extends Component{
         .then(response=>response.json())
         .then(data=>{
             console.log(data);
-            fetch('http://localhost:12345/python/dendrogram')
+            fetch('https://hacknitpback.herokuapp.com/python/dendrogram')
             .then(res=>res.json())
             .then(res=>{
                 src=`data:image/png;base64,${res}`;
