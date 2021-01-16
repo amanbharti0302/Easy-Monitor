@@ -6,7 +6,7 @@ import GraphCard from '../../cards/graph-card.jsx';
 import StudentCard from '../../cards/student-card.jsx';
 import DendoCard from '../../cards/dendogram-card.jsx';
 
-const DashBoardExplore = ()=>{
+const DashBoardExplore = ({user})=>{
     return(
         <div className="teacher-explore-body">
             <div className="teacher-title">
@@ -15,7 +15,7 @@ const DashBoardExplore = ()=>{
             <div className="cards">
 				<GraphCard title="Class Performance (test wise)"  data_labels={['one','two','three','four','five']} data_values={[80,82,79,86,91]} y_label="%Avg. Marks"/>
 				<DendoCard/>
-				<StudentCard/>
+				<StudentCard user={user}/>
 			</div>
         </div>
     )

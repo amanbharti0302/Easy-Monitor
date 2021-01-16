@@ -17,7 +17,6 @@ class DendoCard extends Component{
         });
     }
     onSubmit=()=>{
-        
         fetch('https://hacknitpback.herokuapp.com/python/clustering',{
           method: 'post',
           headers: {'Content-Type':'application/json'},
@@ -39,15 +38,17 @@ class DendoCard extends Component{
           )
         })
         .then(response=>response.json())
-        .then(response=>{
+        .then(data=>{
+            console.log(data);
             fetch('http://localhost:12345/python/dendrogram')
             .then(res=>res.json())
             .then(res=>{
                 src=`data:image/png;base64,${res}`;
                 this.togglePopup();
             })
+            .catch(err=>alert("dendrogram wasn't received"))
         })
-        .catch(err=>console.log(err))
+        .catch(err=>alert("couldn't perform clustering"))
         
         //fetch() and receive student data via student roll and course name/code
         //console.log(this.state.roll);
