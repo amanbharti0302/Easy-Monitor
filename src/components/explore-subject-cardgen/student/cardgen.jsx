@@ -45,7 +45,7 @@ class cardgen extends Component {
 								ReactDOM.render(<GraphCard title="Marks Monitor (test wise marks graph)" data_labels={value} data_values={temp} y_label="%Marks" />, document.getElementById('stu-graph'));
 							}
 							else{
-								$.post("http://localhost:12345/student/gettext",{textid:el.textid},(data)=>{
+								$.post("https://hacknitpback.herokuapp.com/student/gettext",{textid:el.textid},(data)=>{
 									temp.push(data.message.marks);
 								})
 								.then(()=>{
