@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Satisfy&display=swap');
 .teacher-main-body{
     width:100%;
-    margin-top:0;
+    margin-top:62px;
     margin-left: 5px;
    
 }
 .teacher-main-title-text{
     width:100%;
-    margin-left: 2rem;
+    margin-left: calc(300px + 2rem);
     font-size: 2.5rem;
     color:rgb(185, 67, 67);
     font-family:'Satisfy',cursive;
@@ -18,7 +18,7 @@
 .courses-cards{
     padding: 1.5rem 0px;
     width:100%;
-    margin-left:2rem;
+    margin-left:calc(300px + 2rem);
     border-bottom:1px solid rgba(0,0,0,0.1);
     box-shadow: 0px 2px 0px 0px rgba(0,0,0,0.1);
 }
@@ -30,7 +30,7 @@
 }
 .information-block{
     width:100%;
-    margin-left:2rem;
+    margin-left:calc(300px + 2rem);
     box-shadow: 0 2px 0 0 rgba(0,0,0,0.1);
     border-bottom: 1px solid rgba(0,0,0,0.1);
 }
@@ -43,7 +43,7 @@
 
 .link-cards{
     margin-top: 20px;
-    margin-left: 2rem;
+    margin-left: calc(300px + 2rem);
     display: flex;
     width: calc(100vw - 300px);
     justify-content: space-evenly;

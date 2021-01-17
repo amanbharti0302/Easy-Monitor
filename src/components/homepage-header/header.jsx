@@ -1,8 +1,8 @@
 import React from 'react';
 import './header.css';
 import victory_image from '../../assets/images/slider-icon.png';
-import logo from '../../assets/images/logo.png';
 import kid from '../../assets/images/kid.png';
+import logo from '../../assets/images/booklogo.png';
 
 
 const header = ({ onLogin }) => {

@@ -1,16 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Satisfy&display=swap');
 .teacher-check-body{
-    margin-top:0;
+    margin-top:62px;
     margin-left: 5px;
+    height: 100vh;
 }
 .teacher-check-title-text{
-    margin-left: 2rem;
+    margin-left: calc(300px + 2rem);
     font-size: 2.5rem;
     color:rgb(185, 67, 67);
     font-family: 'Satsify', cursive;
 }
 .table{
-    margin:2rem 2rem;
+    margin:2rem 2rem 2rem calc(300px + 2rem);
 }
 .table table{
     border:1px solid rgba(0,0,0,0.4);
@@ -37,8 +38,14 @@ th,td{
 .fourth,.fourth-head,.fifth,.fifth-head{
     width:200px;
 }
-button.check-btn:hover{
-    box-shadow:none;
+.results{
+    margin-left:calc(300px + 2rem);
+    margin-top:2rem;
+}
+h2.check-result-text{
+    font-size: 24px;
+    font-weight: 600;
+    color:rgb(184, 34, 184);
 }
 button.check{
     width:130px;
@@ -50,6 +57,9 @@ button.check{
     background:#f1cef1;
     color:#333;
     
+}
+button.check-btn:hover{
+    box-shadow:none;
 }
 @media only screen and (max-width:1000px){
     .teacher-check-body{

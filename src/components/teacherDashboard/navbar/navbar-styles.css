@@ -2,7 +2,9 @@
 .teacher-navbar{
     width: 300px;
     background: purple;
-
+    position:fixed;
+    height:100vh;
+    top:62px;
 }    
 .teacher-profile{
     width: 100%;
