@@ -10,13 +10,13 @@ function Aboutus() {
 
       <div className="text-container2">
         <h3 id="aboutush">About Us</h3>
-        <p>Cats like boxes because they are cryptic animals; they like to hide,S
-        tephen Zawistowski, science adviser for the American Society for the Prevention of Cruelty to
-          Animals, told Business Insider. "And a box gives them a place of safety and security</p>
-        <p>While inside a box, cats feel that they cannot be snuck up on from behind or the side — anyt
-        hing that wants to approach them must come directly into their field of vision. In effect, such hiding space
-        s allow them to watch the w
-            orld around them without being seen.</p>
+        <p>Our project aims at solving the problems of online mass cheating during online written examinations.
+        It’s for teachers, professors as well as students. It is a way of communication between students and professors
+        during semester. It has several features
+        like plagiarism detection, assignment tracking and much more. It has separate portals for
+        students and professors. Professors can assign tasks to students.
+        Students can submit their tasks and can have their track of subject-wise marks and assignments. It will help the professors as well as students to stay organised and focussed during their online semester.
+</p>
 
       </div>
 

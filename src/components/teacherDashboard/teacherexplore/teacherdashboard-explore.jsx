@@ -6,6 +6,7 @@ import SubjectCard from '../../cards/subject-card.jsx';
 import GraphCard from '../../cards/graph-card.jsx';
 import StudentCard from '../../cards/student-card.jsx';
 import DendoCard from '../../cards/dendogram-card.jsx';
+import StudentreportCard from '../../cards/stdentreportcarddwnld';
 import $ from 'jquery';
 
 class DashBoardExplore extends Component{
@@ -69,6 +70,7 @@ class DashBoardExplore extends Component{
                 </div>
                 <DendoCard coursecode={this.state.coursecode} assignments={this.state.assignments}/>
 				<StudentCard user={user}/>
+                <StudentreportCard user={user}/>
 			</div>
 
         </div>
