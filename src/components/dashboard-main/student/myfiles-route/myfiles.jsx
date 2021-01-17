@@ -122,7 +122,8 @@ class MyFiles extends Component {
 				contentType: false
 			}).done(function (data) {
 				if (data.status === 'success') {alert("File Uploaded Successfully");}
-				else {alert("There is some internal problem");}
+				else {console.log(data);
+					alert("There is some internal problem");}
 
 				document.getElementById('upload-sub').disabled = false;
 				document.getElementById('file').disabled = false;

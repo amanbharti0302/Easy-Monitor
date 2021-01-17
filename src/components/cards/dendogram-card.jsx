@@ -28,7 +28,7 @@ class DendoCard extends Component{
             headers: {'Content-Type':'application/json'},
             body: JSON.stringify({
                 coursecode: this.props.coursecode,
-                assignment_id: this.state.currassignment.id
+                assignment_id: this.state.currassignment._id
             })
         })
         .then(res=>res.json())
@@ -40,7 +40,8 @@ class DendoCard extends Component{
             })
             .then(response=>response.json())
             .then(data=>{
-                if(data={})
+                console.log(data);
+                if(data=={})
                     alert("can't perform clustering on single student.");
                 else{
                     console.log(data);
