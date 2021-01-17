@@ -6,7 +6,7 @@ class DendoCard extends Component{
     constructor(props){
         super(props);
         this.state={
-            roll: "1804001",
+            roll: "",
             currassignment: this.props.assignments[0],
             popup: false
         }
@@ -20,10 +20,10 @@ class DendoCard extends Component{
     onAssignmentChange=(event)=>{
         this.setState({
             currassignment: event.target.value
-        })
+        });
     }
     onSubmit=()=>{
-        fetch('http://localhost:12345/text/assignment-data',{
+        fetch('https://hacknitpback.herokuapp.com/text/assignment-data',{
             method: 'post',
             headers: {'Content-Type':'application/json'},
             body: JSON.stringify({
@@ -33,7 +33,7 @@ class DendoCard extends Component{
         })
         .then(res=>res.json())
         .then(data=>{
-            fetch('http://localhost:12345/python/clustering',{
+            fetch('https://hacknitpback.herokuapp.com/python/clustering',{
               method: 'post',
               headers: {'Content-Type':'application/json'},
               body: JSON.stringify(data)
@@ -44,7 +44,7 @@ class DendoCard extends Component{
                     alert("can't perform clustering on single student.");
                 else{
                     console.log(data);
-                    fetch('http://localhost:12345/python/dendrogram')
+                    fetch('https://hacknitpback.herokuapp.com/python/dendrogram')
                     .then(res=>res.json())
                     .then(res=>{
                         src=`data:image/png;base64,${res}`;
@@ -63,11 +63,9 @@ class DendoCard extends Component{
         })
     }
     render(){
-        //console.log(this.state);
         let options=[];
-        console.log(this.props);
         for(let i=0;i<this.props.assignments.length;i++)
-            options.push(<option key={i} value={this.props.assignments[i].name}>{this.props.assignments[i].name}</option>);
+            options.push(<option key={i} value={this.props.assignments[i].assignment_name}>{this.props.assignments[i].assignment_name}</option>);
         return(
             <div className="card-body">
                 <div className="card-head-text">
