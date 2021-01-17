@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../../../assets/images/logo.png';
+import logo from '../../../assets/images/booklogo.png';
 import ToggleBtn from '../sidedrawer/togglebtn/toggle-btn';
 import './header-styles.css';
 const Header = ({menuToggle})=>{
