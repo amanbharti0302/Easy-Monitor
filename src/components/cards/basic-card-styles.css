@@ -85,7 +85,7 @@
     height: 100vh;
     background: rgba(0,0,0,0.5);
 }
-.popup .dendo-content{
+.popup .overlay-content{
     z-index: 3;
     position: fixed;
     overflow: scroll;
@@ -100,7 +100,7 @@
     text-align: center;
     padding: 50px 40px;
 }
-.popup .dendo-content::-webkit-scrollbar{
+.popup .overlay-content::-webkit-scrollbar{
     display: none;
 }
 .popup .close-btn{
@@ -121,7 +121,7 @@
     .popup .overlay{
         left: 0;
     }
-    .popup .dendo-content{
+    .popup .overlay-content{
         left: 50px;
         width: calc(100vw - 220px);
     }

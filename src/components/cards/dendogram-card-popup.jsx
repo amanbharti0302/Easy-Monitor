@@ -4,7 +4,7 @@ const DendoPopupCard=(props)=>{
     return(
         <div className="popup">
             <div className="overlay"></div>
-            <div className="dendo-content">
+            <div className="overlay-content">
                 <div className="close-btn" onClick={props.togglePopup}>&times;</div>
                 <div className="student-info">
                     {img}
