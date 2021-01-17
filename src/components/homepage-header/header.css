@@ -26,13 +26,37 @@
 	background: rgba(50, 20, 80,0.9);
 	
 }
-#company{
-	z-index: 1;
-	color: white;
-	position: relative;
-	font-size: 32px;
-	top: 20vh;
+#company img {
+    position: absolute;
+    top: 0px;
+	left: 500px;
+	width: 170px;
+	height: auto;
+	border-radius: 10px;
+	max-width: 100%;
+	bottom: 15%;
+  position: absolute;
+  animation: linear ;
+  animation-name: run;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;  
+
 }
+
+@keyframes run {
+	0% {
+	  left: 500px;
+	  top: 0px;
+	}
+	50% {
+	  left: 0px;
+	  top: 0;
+	}
+	100% {
+	  left: 0px;
+	  top:0px;   
+	}
+  }
 
 #welcome{
 	color: white;

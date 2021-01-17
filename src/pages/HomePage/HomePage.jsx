@@ -17,23 +17,24 @@ class HomePage extends Component {
 				<div className="content-main">
 					<Header onLogin={(route) => this.props.history.push(route)} />
 					<div className="content">
-						<Simplecard
-							image={grade}
-							title='Evaluation'
-							body='Instantly go from group chat tan meet in one plac no matter how many places theyre in blah blah blah.' />
+
 						<Simplecard
 							image={plag}
 							title='Plagiarism detection'
-							body='Instantly go from can meet in one place no matter how many places theyre in  blah blah blah.' />
+							body='It instantly detects if a student has copied from internet or from other students. It clusterizes the copies looking similar ' />
+						<Simplecard
+							image={grade}
+							title='Stay Organised'
+							body='It has separate portals for students and professors. Students can have their track of their marks and assignments.' />
 						<Simplecard
 							image={attend}
-							title='Attendance'
-							body='Instantly go from group chat to vide can meet in one place, no matter how many places theyre in  blah blah blah.' />
+							title='Assignment'
+							body='It allows professors to assign tasks to students and students can submit their answer sheets using EasyMonitor.' />
 
 						<Simplecard
 							image={performance}
 							title='Performance tracker'
-							body='Instantly go  the touch of a button. Teams of ace	 no matter how many places theye in  blah blah blah.' />
+							body='It shows your subject-wise marks of each subject. You can have a track of your progress by looking at the Bar Graphs' />
 
 
 
