@@ -7,7 +7,7 @@ class StudentCard extends Component{
     constructor(props){
         super(props);
         this.state={
-            rollno: "01",
+            rollno: "1804017",
             coursecode: this.props.user.course[0].coursecode,
             popup: false
         }
@@ -23,7 +23,7 @@ class StudentCard extends Component{
         });
     }
     onSubmit=()=>{
-        fetch('http://localhost:12345/text/student-details',{
+        fetch('https://hacknitpback.herokuapp.com/text/student-details',{
             method: 'post',
             headers: {'Content-Type':'application/json'},
             body: JSON.stringify(
@@ -35,7 +35,9 @@ class StudentCard extends Component{
         .then(res=>res.json())
         .then(data=>{
             student=data;
-            console.log(data);
+            console.log(student);
+            if(student.name===undefined)
+                throw student;
             this.togglePopup();
         })
         .catch(err=>alert(err));
@@ -58,7 +60,7 @@ class StudentCard extends Component{
                     <p style={{marginTop:"2px"}}>You can view student's plagiarism details here</p>
                     <h3>Select Student:</h3>
                     <p id="roll-label" style={{margin:0}}>Roll No.</p>
-                    <input className="submit-input" type="text" onChange={this.onRollChange} value={this.state.roll}/>
+                    <input className="submit-input" type="text" onChange={this.onRollChange} value={this.state.rollno}/>
                     <p id="roll-label" style={{marginBottom:0}}>Subject</p>
                     <select className="submit-input" onChange={this.onSubChange}>
                         {options}
