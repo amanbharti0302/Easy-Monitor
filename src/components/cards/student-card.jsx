@@ -8,18 +8,12 @@ class StudentCard extends Component{
         super(props);
         this.state={
             rollno: "1804017",
-            coursecode: this.props.user.course[0].coursecode,
             popup: false
         }
     }
     onRollChange=(event)=>{
         this.setState({
             rollno: event.target.value
-        });
-    }
-    onSubChange=(event)=>{
-        this.setState({
-            coursecode: event.target.value
         });
     }
     onSubmit=()=>{
@@ -29,7 +23,7 @@ class StudentCard extends Component{
             body: JSON.stringify(
             {
                 rollno: this.state.rollno,
-                coursecode: this.state.coursecode
+                coursecode: this.props.coursecode
             })
         })
         .then(res=>res.json())
@@ -61,10 +55,7 @@ class StudentCard extends Component{
                     <h3>Select Student:</h3>
                     <p id="roll-label" style={{margin:0}}>Roll No.</p>
                     <input className="submit-input" type="text" onChange={this.onRollChange} value={this.state.rollno}/>
-                    <p id="roll-label" style={{marginBottom:0}}>Subject</p>
-                    <select className="submit-input" onChange={this.onSubChange}>
-                        {options}
-                    </select>
+                    
                     <input className="submit-btn" type="submit" onClick={this.onSubmit} value="submit"  style={{marginTop:"20px"}}/>
                 </div>
                 {
@@ -77,3 +68,9 @@ class StudentCard extends Component{
 }
 
 export default StudentCard;
+/*
+<p id="roll-label" style={{marginBottom:0}}>Subject</p>
+                    <select className="submit-input" onChange={this.onSubChange}>
+                        {options}
+                    </select>
+                    */

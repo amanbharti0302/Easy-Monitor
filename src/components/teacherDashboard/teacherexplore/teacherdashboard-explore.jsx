@@ -69,8 +69,8 @@ class DashBoardExplore extends Component{
 				<div id="performance-card"><GraphCard title="Class Performance (test wise)"  data_labels={len} data_values={performance} y_label="%Avg. Marks"/></div>
                 </div>
                 <DendoCard coursecode={this.state.coursecode} assignments={this.state.assignments}/>
-				<StudentCard user={user}/>
-                <StudentreportCard user={user}/>
+				<StudentCard user={user} coursecode={this.state.coursecode}/>
+                <StudentreportCard user={user} coursecode={this.state.coursecode} assignments={this.state.assignments}/>
 			</div>
 
         </div>

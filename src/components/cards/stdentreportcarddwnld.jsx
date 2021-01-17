@@ -53,6 +53,11 @@ class StudentreportCard extends Component{
         })
     }
     render(){
+        let options=[];
+        for(let i=0;i<this.props.assignments.length;i++)
+            options.push(<option key={i} value={this.props.assignments[i].assignment_name}>{this.props.assignments[i].assignment_name}</option>);
+        
+        /*
         let options=[],options2=[];
         for(let i=0;i<this.props.user.course.length;i++)
             options.push(<option key={i} value={this.props.user.course[i].coursecode}>{this.props.user.course[i].coursecode}</option>);
@@ -69,7 +74,7 @@ class StudentreportCard extends Component{
                 // {}
             })
             //options2.push(<option key={i} value={this.props.user.course[i].coursecode}>{this.props.user.course[i].coursecode}</option>);
-
+*/
         return(
             <div className="card-body">
                 <div className="card-head-text">
@@ -77,14 +82,10 @@ class StudentreportCard extends Component{
                 </div> 
                 <div className="sub-body">
                     <p style={{marginTop:"2px"}}>You can download student's answersheet here</p>
-                    <p id="roll-label" style={{marginBottom:5}}>Subject</p>
-                    <select className="submit-input" onChange={this.onSubChange}>
-                        {options}
-                    </select>
-
+                    
                     <p id="roll-label" style={{marginBottom:5}}>Assignment</p>
                     <select className="submit-input" id="asschange" onChange={this.onassChange}>
-                        {options2}
+                        {options}
                     </select>
 
                     <p id="roll-label" style={{margin:0,marginTop:10}}>Roll No.</p>
@@ -102,3 +103,10 @@ class StudentreportCard extends Component{
 }
 
 export default StudentreportCard;
+
+/*
+<p id="roll-label" style={{marginBottom:5}}>Subject</p>
+                    <select className="submit-input" onChange={this.onSubChange}>
+                        {options}
+                    </select>
+*/
