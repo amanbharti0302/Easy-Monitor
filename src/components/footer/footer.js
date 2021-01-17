@@ -15,9 +15,9 @@ function Footer() {
 					<p className="ff4">+91000000000</p>
 				</div>
 				<div className="social-footer">
-					<div className="ff1"><a href="#" ><img src={facebook_icon} className="footer-icon facebook" /></a></div>
-					<div className="ff2"><a href="#" ><img src={twitter_icon} className="footer-icon twitter" /></a></div>
-					<div className="ff3"><a href="#"><img src={instagram_icon} className="footer-icon instagram" /></a></div>
+					<a href="#" ><img src={facebook_icon} className="footer-icon facebook" /></a>
+					<a href="#" ><img src={twitter_icon} className="footer-icon twitter" /></a>
+					<a href="#"><img src={instagram_icon} className="footer-icon instagram" /></a>
 				</div>
 			</div>
 
