@@ -7,7 +7,7 @@ class DendoCard extends Component{
         super(props);
         this.state={
             roll: "",
-            currassignment: this.props.assignments[0],
+            assign_id: "",
             popup: false
         }
     }
@@ -19,16 +19,28 @@ class DendoCard extends Component{
     }
     onAssignmentChange=(event)=>{
         this.setState({
-            currassignment: event.target.value
+            assign_id: event.target.value
         });
     }
     onSubmit=()=>{
+        /*
+        for(let i=0;i<this.props.assignments.length;i++)
+            if(this.props.assignments[i].assignment_name===event.target.vaue){
+                //assign_id=this.props.assignments[i].assignment_id;
+                console.log(this.props.assignments[i]);
+                break;
+            }
+        */
+        if(this.state.assign_id===""){
+            alert('Select an assignment');
+            return;
+        }
         fetch('https://hacknitpback.herokuapp.com/text/assignment-data',{
             method: 'post',
             headers: {'Content-Type':'application/json'},
             body: JSON.stringify({
-                coursecode: 'EC6501',
-                assignment_id: '6001ad043b9d0a00245b4544'//this.state.currassignment.id
+                coursecode: this.props.coursecode,
+                assignment_id: this.state.assign_id//this.state.currassignment.id
             })
         })
         .then(res=>res.json())
@@ -64,8 +76,9 @@ class DendoCard extends Component{
     }
     render(){
         let options=[];
+        options.push(<option key={-1} value="">Select Any</option>);
         for(let i=0;i<this.props.assignments.length;i++)
-            options.push(<option key={i} value={this.props.assignments[i].assignment_name}>{this.props.assignments[i].assignment_name}</option>);
+            options.push(<option key={i} value={this.props.assignments[i].assignment_id}>{this.props.assignments[i].assignment_name}</option>);
         return(
             <div className="card-body">
                 <div className="card-head-text">
@@ -78,7 +91,7 @@ class DendoCard extends Component{
                     <select className="submit-input" onChange={this.onAssignmentChange}>
                         {options}
                     </select>
-                    <input className="submit-btn" type="submit" onClick={()=>this.onSubmit()} value="get clusters !"/>
+                    <input className="submit-btn" type="submit" onClick={this.onSubmit} value="get clusters !"/>
                 </div>
                 {
                     this.state.popup?
