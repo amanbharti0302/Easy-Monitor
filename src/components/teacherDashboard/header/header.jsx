@@ -5,7 +5,7 @@ import './header-styles.css';
 const Header = ({menuToggle})=>{
     return(
         <div className="teacher-header-container">
-            <nav class="teacher-header">
+            <nav className="teacher-header">
                 <div className="teacher-logo">
                     <ToggleBtn menuToggle={menuToggle}/>
                     <img src={logo} alt=""/>

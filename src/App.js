@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route} from 'react-router-dom';
 import './App.css';
 import FormPage from './pages/formpage/formpage';
 import HomePage from './pages/HomePage/HomePage';
