@@ -1,5 +1,27 @@
-.footer{
-	background: black;
+@import url('https://fonts.googleapis.com/css2?family=Potta+One&display=swap');
+.homepage-footer{
+	background: #46008b;
 	color: white;
 	padding: 3em;
+	
+}
+
+.social-footer{
+	display: flex;
+	justify-content: flex-end;
+
+}
+.ff1, .ff2, .ff3 { 
+	background: #efefef; 
+	border: 1px solid #999; 
+	margin-right: 20px;
+	
+ }
+.ff2 { 
+	text-align: center;
+ }
+.ff4{
+	font-family: 'Potta One', cursive;
+	
+
 }
