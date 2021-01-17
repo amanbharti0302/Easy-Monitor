@@ -1,13 +1,17 @@
 import React from 'react';
 import './header.css';
 import victory_image from '../../assets/images/slider-icon.png';
+import logo from '../../assets/images/logo.png';
+
 
 
 const header = ({ onLogin }) => {
     return (
         <div className="header-banner">
             <header className="header-main">
-                <div id="company">Easy Monitor</div>
+                <div id="company">
+                    <img src={logo} className="homepage-logo" />
+                </div>
                 <nav className="header-nav">
 
                     <div className="login-btn">Home</div>
