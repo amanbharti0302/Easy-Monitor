@@ -12,8 +12,9 @@ class DashBoardExplore extends Component{
     constructor(props){
         super(props);
         this.state={
-            rollno: "01",
-            coursecode: this.props.user.course[0].coursecode,
+            //rollno: "01",
+            assignments: [{name: 'assignment 1',id: '0x000'},{name: 'assignment 2',id: '0x000'}],//edit ere too
+            coursecode: this.props.user.course[0].coursecode,//Use this for all on the page.
             popup: false
         }
     }
@@ -22,6 +23,26 @@ class DashBoardExplore extends Component{
         this.setState({
             coursecode: event.target.value
         });
+    }
+    componentDidMount(){
+        console.log('assignments are fetched coursecode wise here');
+        /*
+        fetch('to get assignment',{
+            method: 'post',
+            headers: {'Content-Type':'application/json'},
+            body: JSON.stringify({
+                course: this.state.coursecode,
+                id_self: this.props.user._id
+            })
+        })
+        .then(res=>res.json())
+        .then(assignments=>{
+            this.setState({
+                assignments: assignments
+            })
+        })
+        .catch(err=>console.log(err));
+        */
     }
 
     render(){
@@ -42,6 +63,7 @@ class DashBoardExplore extends Component{
             ReactDOM.render(<GraphCard title="Class Performance (test wise)"  data_labels={len} data_values={performance} y_label="%Avg. Marks"/>,document.getElementById('performance-card'));
         })  
 
+        console.log(this.props);
     return(
         <div className="teacher-explore-body">
             <div className="teacher-title">
@@ -55,7 +77,7 @@ class DashBoardExplore extends Component{
                 </select>
 				<div id="performance-card"><GraphCard title="Class Performance (test wise)"  data_labels={len} data_values={performance} y_label="%Avg. Marks"/></div>
                 </div>
-                <DendoCard/>
+                <DendoCard coursecode={this.state.coursecode} assignments={this.state.assignments}/>
 				<StudentCard user={user}/>
 			</div>
 
