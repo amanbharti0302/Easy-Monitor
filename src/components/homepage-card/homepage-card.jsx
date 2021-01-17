@@ -24,7 +24,7 @@ function Simplecard({ image, title, body }) {
             <div className="homepage-btn">
                 <button>
 
-                    <a id="view" href='/'>View More</a>
+                    <a id="view" href='/'>Know More</a>
                 </button>
             </div>
 

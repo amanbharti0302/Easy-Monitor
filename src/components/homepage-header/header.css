@@ -29,12 +29,34 @@
 #company img {
     position: absolute;
     top: 0px;
-	left: 0px;
+	left: 500px;
 	width: 170px;
 	height: auto;
 	border-radius: 10px;
 	max-width: 100%;
+	bottom: 15%;
+  position: absolute;
+  animation: linear ;
+  animation-name: run;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;  
+
 }
+
+@keyframes run {
+	0% {
+	  left: 500px;
+	  top: 0px;
+	}
+	50% {
+	  left: 0px;
+	  top: 0;
+	}
+	100% {
+	  left: 0px;
+	  top:0px;   
+	}
+  }
 
 #welcome{
 	color: white;
