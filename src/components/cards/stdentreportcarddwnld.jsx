@@ -2,7 +2,7 @@ import {Component} from 'react';
 import $ from 'jquery';
 import './basic-card-styles.css';
 import PopupCard from './student-card-popup.jsx';
-
+import ReactDOM from 'react-dom';
 var student={};
 class StudentreportCard extends Component{
     constructor(props){
@@ -29,29 +29,14 @@ class StudentreportCard extends Component{
             assignment: e.target.value
         });
     }
-    onSubmit=()=>{
-        fetch('http://localhost:12345/text/student-details',{
-            method: 'post',
-            headers: {'Content-Type':'application/json'},
-            body: JSON.stringify(
-            {
-                rollno: this.state.rollno,
-                coursecode: this.state.coursecode
-            })
-        })
-        .then(res=>res.json())
-        .then(data=>{
-            student=data;
-            console.log(data);
-            this.togglePopup();
-        })
-        .catch(err=>alert(err));
-    }
+    onSubmit=()=>{}
+
     togglePopup=()=>{
         this.setState({
             popup: !this.state.popup
         })
     }
+
     render(){
         let options=[],options2=[];
         for(let i=0;i<this.props.user.course.length;i++)
@@ -64,11 +49,7 @@ class StudentreportCard extends Component{
                         options2.push(<option key={data2._id} value={data2.name}>{data2.name}</option>);
                     })
                 }))
-
-                // for(let i=0;i<data.message.length;i++)
-                // {}
             })
-            //options2.push(<option key={i} value={this.props.user.course[i].coursecode}>{this.props.user.course[i].coursecode}</option>);
 
         return(
             <div className="card-body">
