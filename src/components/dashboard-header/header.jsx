@@ -1,7 +1,7 @@
 import {useLocation} from 'react-router-dom';
 
 import './header-styles.css';
-import logo from '../../assets/images/logo.png';
+import logo from '../../assets/images/booklogo.png';
 import ToggleBtn from '../sidedrawer/togglebtn/toggle-btn';
 import Dropdown from '../dropdown/dropdown.js';
 
