@@ -34,7 +34,7 @@ const PopupCard=(props)=>{
     return(
         <div className="popup">
             <div className="overlay"></div>
-            <div className="content">
+            <div className="overlay-content">
                 <div className="close-btn" onClick={props.togglePopup}>&times;</div>
                 <div className="student-info">
                     <p>Name: {student.name}</p>
