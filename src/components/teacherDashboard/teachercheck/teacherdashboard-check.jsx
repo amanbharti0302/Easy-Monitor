@@ -5,13 +5,37 @@ class DashBoardCheck extends Component{
     constructor(props){
         super(props);
         this.state={
-            show:false
+            show: false,
+            course_assign_student: []
         }
+        let course_assign_student=[];
+        for(let i=0;i<this.props.user.course.length;i++){
+            fetch('https://hacknitpback.herokuapp.com/text/all-assignments',{
+                method: 'post',
+                headers: {'Content-Type':'application/json'},
+                body: JSON.stringify({
+                    coursecode: this.props.user.course[i].coursecode
+                })
+            })
+            .then(res=>res.json())
+            .then(assignments=>{
+                course_assign_student.push({
+                    name: this.props.user.course[i].name,
+                    coursecode: this.props.user.course[i].coursecode,
+                    assignments: assignments
+                });
+                this.setState({
+                    course_assign_student: course_assign_student
+                });
+            })
+            .catch(err=>alert(err));
+        }
+
     }
     
     
     render(){
-        
+        console.log(this.state);
         return(
             <div className="teacher-check-body">
                 <div className="teacher-check-title">

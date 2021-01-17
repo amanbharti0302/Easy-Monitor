@@ -17,6 +17,20 @@ class DashBoardExplore extends Component{
             coursecode: this.props.user.course[0].coursecode,//Use this for all on the page.
             popup: false
         }
+        fetch('https://hacknitpback.herokuapp.com/text/all-assignments',{
+            method: 'post',
+            headers: {'Content-Type':'application/json'},
+            body: JSON.stringify({
+                coursecode: this.props.user.course[0].coursecode
+            })
+        })
+        .then(res=>res.json())
+        .then(assignments=>{
+            this.setState({
+                assignments: assignments
+            })
+        })
+        .catch(err=>console.log(err));
     }
 
     onSubChange=(event)=>{
@@ -37,7 +51,6 @@ class DashBoardExplore extends Component{
         .catch(err=>console.log(err));
     }
     render(){
-        //console.log(this.state);
         const {user} = this.props;
         let options=[],performance=[],len=[];
         for(let i=0;i<this.props.user.course.length;i++)
