@@ -23,7 +23,7 @@ class StudentCard extends Component{
         });
     }
     onSubmit=()=>{
-        fetch('http://localhost:12345/text/assignment-details',{
+        fetch('http://localhost:12345/text/student-details',{
             method: 'post',
             headers: {'Content-Type':'application/json'},
             body: JSON.stringify(
@@ -35,8 +35,10 @@ class StudentCard extends Component{
         .then(res=>res.json())
         .then(data=>{
             student=data;
+            console.log(data);
             this.togglePopup();
         })
+        .catch(err=>alert(err));
     }
     togglePopup=()=>{
         this.setState({

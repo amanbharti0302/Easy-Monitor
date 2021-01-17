@@ -5,17 +5,16 @@ const PopupCard=(props)=>{
     const student=props.student;
     let plagiarism=[];
     if(student.name===undefined)
-        alert('student');
+        alert(student);
     else
         for(let i=0;i<student.assignment.length;i++){
             let x;
             if(student.assignment[i].submit==="yes"){
                 if(student.assignment[i].plagiarismcheck==="complete"){
                     console.log(student.assignment[i].plagiarism.urls);
-                    //for(let j=0;j<)
                     let y=[];
                     for (let key in student.assignment[i].plagiarism.urls)
-                        y.push(<p>"{key}" : {student.assignment[i].plagiarism.urls[key]*100}%</p>);
+                        y.push(<p><a href={key} target="_blank" rel="noopener noreferrer">{key}</a> : {student.assignment[i].plagiarism.urls[key]*100}%</p>);
                     x=<div>
                         <p>Total Percent Plagiarism: {student.assignment[i].plagiarism.plagiarism_percentage}</p>
                         {y}
