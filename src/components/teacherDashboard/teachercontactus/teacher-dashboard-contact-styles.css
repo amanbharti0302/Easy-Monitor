@@ -1,22 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Satisfy&display=swap');
 .teacher-contact-body{
     margin-top:0;
     margin-left: 5px;
 }
-.teacher-title-text{
+.teacher-contact-title-text{
     margin-left: 2rem;
     font-size: 2.5rem;
     color:rgb(185, 67, 67);
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Satisfy', cursive;
 }
-.basic-cards{
-    display: flex;
-    margin-left: 2rem;
+.contact-us-cards{
+    width:calc(100vw - 300px);
+    display:flex;
+    flex-direction:column;
+   
 }
-.rect-cards{
-    margin-left: 2rem;
+.row-1{
+    width:100%;
+    display:flex;
+    justify-content: space-around;
+    margin:0px 0px 10px 0px;
 }
-
+.row-2{
+    width:100%;
+    display:flex;
+    justify-content: space-around;
+}
 @media only screen and (max-width:1000px){
     .teacher-contact-body{
         max-width:1000px;

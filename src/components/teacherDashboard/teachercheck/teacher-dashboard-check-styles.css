@@ -9,58 +9,47 @@
     color:rgb(185, 67, 67);
     font-family: 'Satsify', cursive;
 }
-.check-work-block{
-    margin: 1.5rem 2rem;
-    display: flex;
-    flex-direction:column;
+.table{
+    margin:2rem 2rem;
 }
-.show{
-    display:block;
+.table table{
+    border:1px solid rgba(0,0,0,0.4);
 }
-.hide{
-    display:none;
+tr:first-child{
+    width:150px;
 }
-.check-work-card{
-    display: flex;
-    justify-content: space-between;
-    width: 750px;
-    padding: 9px 13px;
-    border: 1px solid rgba(0,0,0,0.1);
-    border-left: 6px solid lightgreen;
-    border-radius: 4px;
-    background: #f6f6f6;
-    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.1);
-}
-h2.check-work-result-head{
-    margin:2rem 0rem;
-    font-family: 24px;
-    font-family: 'Satsify',cursive;
-    color:purple;
-}
-p.check-work-text{
-    font-size:20px;
-    font-family: 'Roboto',sans-serif;
-    color: rgba(250, 22, 155, 0.808);
-    font-weight: 800;
-}
-button.check-btn{
-    width: 130px;
-    padding: 4px 13px;
-    font-size: 18px;
-    outline:none;
-    cursor: pointer;
-    background: rgb(179, 50, 179);
-    color: white;
-    font-weight: 700;
-    border:none;
-    border-radius:6px; 
-    font-family:'Satisfy',cursive;
-    box-shadow:0px 0px 6px 0px rgba(56, 2, 56, 0.76);
-    transition: 0.3s;
+th,td{
+    text-align:left;
+    padding:8px 0px;
+    border:1px solid rgba(0,0,0,0.1);
 }
 
+.first-head,.first{
+    width:150px;
+    
+}
+.second,.second-head{
+    width:300px;
+}
+.third,.third-head{
+    width:250px;
+}
+.fourth,.fourth-head,.fifth,.fifth-head{
+    width:200px;
+}
 button.check-btn:hover{
     box-shadow:none;
+}
+button.check{
+    width:130px;
+    padding:6px 10px;
+    border:1px solid rgba(0,0,0,0.1);
+    outline:none;
+    cursor: pointer;
+    border-radius:4px;
+    background:#f1cef1;
+    color:#333;
+    
 }
 @media only screen and (max-width:1000px){
     .teacher-check-body{

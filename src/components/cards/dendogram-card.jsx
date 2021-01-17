@@ -27,8 +27,8 @@ class DendoCard extends Component{
             method: 'post',
             headers: {'Content-Type':'application/json'},
             body: JSON.stringify({
-                coursecode: 'EC6501',
-                assignment_id: '6001ad043b9d0a00245b4544'//this.state.currassignment.id
+                coursecode: this.props.coursecode,
+                assignment_id: this.state.currassignment.id
             })
         })
         .then(res=>res.json())
