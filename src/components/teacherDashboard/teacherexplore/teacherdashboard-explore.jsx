@@ -75,7 +75,6 @@ class DashBoardExplore extends Component{
             <div className="teacher-title">
                 <h2 className="teacher-title-text">Explore</h2>
             </div>
-            
             <div className="cards">
                 <div>
                 <select className="submit-input" onChange={this.onSubChange}>
