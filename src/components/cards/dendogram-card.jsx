@@ -13,7 +13,7 @@ class DendoCard extends Component{
     }
     onChange=(event)=>{
         this.setState({
-            roll: event.target.value, //text
+            roll: event.target.value,
             student_data: ""
         });
     }
@@ -23,14 +23,6 @@ class DendoCard extends Component{
         });
     }
     onSubmit=()=>{
-        /*
-        for(let i=0;i<this.props.assignments.length;i++)
-            if(this.props.assignments[i].assignment_name===event.target.vaue){
-                //assign_id=this.props.assignments[i].assignment_id;
-                console.log(this.props.assignments[i]);
-                break;
-            }
-        */
         if(this.state.assign_id===""){
             alert('Select an assignment');
             return;
