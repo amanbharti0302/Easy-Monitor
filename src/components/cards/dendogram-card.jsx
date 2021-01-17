@@ -44,7 +44,7 @@ class DendoCard extends Component{
             })
             .then(response=>response.json())
             .then(data=>{
-                if(data={})
+                if(data==={})
                     alert("can't perform clustering on single student.");
                 else{
                     console.log(data);
