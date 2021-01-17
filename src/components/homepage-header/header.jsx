@@ -14,7 +14,7 @@ const header = ({ onLogin }) => {
                     <a href="#container2" className="aboutusheader">About Us</a>
                     <div onClick={() => onLogin('/login-student')} className="login-btn">Student Login</div>
                     <div onClick={() => onLogin('/login-teacher')} className="login-btn">Professor Login</div>
-                    <div className="login-btn">Contact Us</div>
+                    <a href="#homepage-footer" className="aboutusheader">Contact Us</a>
 
                 </nav>
             </header>
