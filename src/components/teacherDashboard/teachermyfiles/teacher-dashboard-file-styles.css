@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Satisfy&display=swap');
 .teacher-file-body{
+    margin-top:62px;
     width: 100%;
 }
 .teacher-form-container{
-    margin: 30px auto;
+    margin: 30px 600px;
     width: 450px;
     border: 1px solid rgba(0,0,0,0.1);
     display:flex;
