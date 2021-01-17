@@ -11,7 +11,7 @@ function Footer() {
 				<p className="ff4">Copyright &copy; 2020 Team LoremIpsum3.0</p>
 				<div className="contactus-footer">
 					<p className="ff4">Contact Us</p>
-					<p className="ff4">abcxyz@easymonitor.ac.in</p>
+					<p className="ff4">loremipsum@easymonitor.ac.in</p>
 					<p className="ff4">+91000000000</p>
 				</div>
 				<div className="social-footer">
