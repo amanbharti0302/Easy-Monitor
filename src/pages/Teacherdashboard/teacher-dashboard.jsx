@@ -36,7 +36,7 @@ class TeacherDashboard extends Component{
               <Route exact path="/login-teacher/" render={()=>(<DashBoardMain name={this.props.user.name} branch={this.props.user.branch} email={this.props.user.email} mbno={this.props.user.mobno} course={this.props.user.course}/>)}/>
               <Route exact path="/login-teacher/explore"><DashBoardExplore user={this.props.user}/></Route>
               <Route exact path="/login-teacher/assign"> <DashBoardMyFile user={this.props.user}/></Route>
-              <Route exact path="/login-teacher/check" component={DashBoardCheck}/>
+              <Route exact path="/login-teacher/check"> <DashBoardCheck user={this.props.user}/></Route>
               <Route exact path="/login-teacher/contact" component={DashBoardContact}/>
             </Switch>
           </div>
