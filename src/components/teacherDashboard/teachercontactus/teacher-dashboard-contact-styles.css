@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Satisfy&display=swap');
 .teacher-contact-body{
-    margin-top:0;
-    margin-left: 5px;
+    margin-top:62px;
+    margin-left: calc(300px + 2rem);
 }
 .teacher-contact-title-text{
-    margin-left: 2rem;
+    margin-left: calc(300px + 2rem);
     font-size: 2.5rem;
     color:rgb(185, 67, 67);
     font-family: 'Satisfy', cursive;
@@ -19,7 +19,7 @@
     width:100%;
     display:flex;
     justify-content: space-around;
-    margin:0px 0px 10px 0px;
+    margin:0px 0px 1.5rem 0px;
 }
 .row-2{
     width:100%;
